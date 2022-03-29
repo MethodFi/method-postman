@@ -1,2 +1,2 @@
 # method-postman
-Postman collection for Method API
+Postman collection for Method API.
