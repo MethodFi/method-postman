@@ -27,14 +27,15 @@
 									"raw": "{\n    \"holder_id\": \"ent_hybiaAZaQUSZg\",\n    \"ach\": {\n        \"routing\": \"367537407\",\n        \"number\": \"57838927\",\n        \"type\": \"checking\"\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/accounts/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/accounts",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"accounts",
-										""
+										"accounts"
 									]
 								}
 							},
@@ -61,14 +62,15 @@
 											}
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"accounts",
-												""
+												"accounts"
 											]
 										}
 									},
@@ -128,14 +130,15 @@
 											"raw": "{\n    \"holder_id\": \"ent_y1a9e1fbnJ1f3\",\n    \"ach\": {\n        \"routing\": \"367537407\",\n        \"number\": \"57838927\",\n        \"type\": \"checking\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"accounts",
-												""
+												"accounts"
 											]
 										}
 									},
@@ -197,14 +200,15 @@
 									"raw": "{\n  \"holder_id\": \"ent_hybiaAZaQUSZg\",\n  \"liability\": {\n    \"mch_id\": \"mch_2\",\n    \"account_number\": \"1122334455\"\n  }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/accounts/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/accounts",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"accounts",
-										""
+										"accounts"
 									]
 								}
 							},
@@ -225,14 +229,15 @@
 											"raw": "{\n  \"holder_id\": \"ent_hybiaAZaQUSZg\",\n  \"liability\": {\n    \"mch_id\": \"mch_2\",\n    \"account_number\": \"1122334455\"\n  }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"accounts",
-												""
+												"accounts"
 											]
 										}
 									},
@@ -292,14 +297,15 @@
 											"raw": "{\n  \"holder_id\": \"ent_hybiaAZaQUSZg\"\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"accounts",
-												""
+												"accounts"
 											]
 										}
 									},
@@ -369,10 +375,12 @@
 											"raw": "{\n    \"type\": \"micro_deposits\"\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/:accountId/verification",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
 												"accounts",
@@ -405,10 +413,12 @@
 													"raw": "{\n    \"type\": \"micro_deposits\"\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -479,10 +489,12 @@
 													"raw": "{\n    \"type\": \"wrong_type\"\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -553,10 +565,12 @@
 													"raw": "{\n    \"type\": \"micro_deposits\"\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -627,10 +641,12 @@
 													"raw": "{\n    \"type\": \"micro_deposits\"\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -703,10 +719,12 @@
 											"raw": "{\n    \"type\": \"plaid\",\n    \"plaid\": {\n        \"balances\": {\n            \"available\": 100,\n            \"current\": 110,\n            \"iso_currency_code\": \"USD\",\n            \"limit\": null,\n            \"unofficial_currency_code\": null\n        },\n        \"transactions\": []\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/:accountId/verification",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
 												"accounts",
@@ -739,10 +757,12 @@
 													"raw": "{\n    \"type\": \"plaid\",\n    \"plaid\": {\n        \"balances\": {\n            \"available\": 100,\n            \"current\": 110,\n            \"iso_currency_code\": \"USD\",\n            \"limit\": null,\n            \"unofficial_currency_code\": null\n        },\n        \"transactions\": []\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -813,10 +833,12 @@
 													"raw": "{\n    \"type\": \"plaid\",\n    \"plaid\": {\n        \"balances\": {\n            \"available\": 100,\n            \"current\": 110,\n            \"iso_currency_code\": \"USD\",\n            \"limit\": null,\n            \"unofficial_currency_code\": null\n        }\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -887,10 +909,12 @@
 													"raw": "{\n    \"type\": \"plaid\",\n    \"plaid\": {\n        \"balances\": {\n            \"available\": 100,\n            \"current\": 110,\n            \"iso_currency_code\": \"USD\",\n            \"limit\": null,\n            \"unofficial_currency_code\": null\n        },\n        \"transactions\": []\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -963,10 +987,12 @@
 											"raw": "{\n    \"type\": \"teller\",\n    \"teller\": {\n        \"balances\": {\n            \"account_id\": \"acc_ns9gkibeia6ad0rr6s00q\",\n            \"available\": \"93011.13\",\n            \"ledger\": \"93011.13\",\n            \"links\": {\n                \"account\": \"https://api.teller.io/accounts/acc_ns9gkibeia6ad0rr6s00q\",\n                \"self\": \"https://api.teller.io/accounts/acc_ns9gkibeia6ad0rr6s00q/balances\"\n            }\n        },\n        \"transactions\": [\n            {\n                \"account_id\": \"acc_ns9gkia42a6ad0rr6s000\",\n                \"amount\": \"-51.19\",\n                \"date\": \"2022-01-04\",\n                \"description\": \"Venmo Payment\",\n                \"details\": {\n                    \"category\": \"services\",\n                    \"counterparty\": {\n                        \"name\": \"LOUISE BENTLEY\",\n                        \"type\": \"person\"\n                    },\n                    \"processing_status\": \"complete\"\n                },\n                \"id\": \"txn_ns9gkiph2a6ad0rr6s000\",\n                \"links\": {\n                    \"account\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000\",\n                    \"self\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000/transactions/txn_ns9gkiph2a6ad0rr6s000\"\n                },\n                \"running_balance\": null,\n                \"status\": \"pending\",\n                \"type\": \"digital_payment\"\n            }\n        ]\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/:accountId/verification",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
 												"accounts",
@@ -999,10 +1025,12 @@
 													"raw": "{\n    \"type\": \"teller\",\n    \"teller\": {\n      \"balances\": {\n        \"account_id\": \"acc_ns9gkibeia6ad0rr6s00q\",\n        \"available\": \"93011.13\",\n        \"ledger\": \"93011.13\",\n        \"links\": {\n          \"account\": \"https://api.teller.io/accounts/acc_ns9gkibeia6ad0rr6s00q\",\n          \"self\": \"https://api.teller.io/accounts/acc_ns9gkibeia6ad0rr6s00q/balances\"\n        }\n      },\n      \"transactions\": [\n        {\n          \"account_id\": \"acc_ns9gkia42a6ad0rr6s000\",\n          \"amount\": \"-51.19\",\n          \"date\": \"2022-01-04\",\n          \"description\": \"Venmo Payment\",\n          \"details\": {\n            \"category\": \"services\",\n            \"counterparty\": {\n              \"name\": \"LOUISE BENTLEY\",\n              \"type\": \"person\"\n            },\n            \"processing_status\": \"complete\"\n          },\n          \"id\": \"txn_ns9gkiph2a6ad0rr6s000\",\n          \"links\": {\n            \"account\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000\",\n            \"self\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000/transactions/txn_ns9gkiph2a6ad0rr6s000\"\n          },\n          \"running_balance\": null,\n          \"status\": \"pending\",\n          \"type\": \"digital_payment\"\n        }\n      ]\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -1073,10 +1101,12 @@
 													"raw": "{\n    \"type\": \"teller\",\n    \"teller\": {\n        \"transactions\": [\n            {\n                \"account_id\": \"acc_ns9gkia42a6ad0rr6s000\",\n                \"amount\": \"-51.19\",\n                \"date\": \"2022-01-04\",\n                \"description\": \"Venmo Payment\",\n                \"details\": {\n                    \"category\": \"services\",\n                    \"counterparty\": {\n                        \"name\": \"LOUISE BENTLEY\",\n                        \"type\": \"person\"\n                    },\n                    \"processing_status\": \"complete\"\n                },\n                \"id\": \"txn_ns9gkiph2a6ad0rr6s000\",\n                \"links\": {\n                    \"account\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000\",\n                    \"self\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000/transactions/txn_ns9gkiph2a6ad0rr6s000\"\n                },\n                \"running_balance\": null,\n                \"status\": \"pending\",\n                \"type\": \"digital_payment\"\n            }\n        ]\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -1147,10 +1177,12 @@
 													"raw": "{\n    \"type\": \"teller\",\n    \"teller\": {\n        \"balances\": {\n            \"account_id\": \"acc_ns9gkibeia6ad0rr6s00q\",\n            \"available\": \"93011.13\",\n            \"ledger\": \"93011.13\",\n            \"links\": {\n                \"account\": \"https://api.teller.io/accounts/acc_ns9gkibeia6ad0rr6s00q\",\n                \"self\": \"https://api.teller.io/accounts/acc_ns9gkibeia6ad0rr6s00q/balances\"\n            }\n        },\n        \"transactions\": [\n            {\n                \"account_id\": \"acc_ns9gkia42a6ad0rr6s000\",\n                \"amount\": \"-51.19\",\n                \"date\": \"2022-01-04\",\n                \"description\": \"Venmo Payment\",\n                \"details\": {\n                    \"category\": \"services\",\n                    \"counterparty\": {\n                        \"name\": \"LOUISE BENTLEY\",\n                        \"type\": \"person\"\n                    },\n                    \"processing_status\": \"complete\"\n                },\n                \"id\": \"txn_ns9gkiph2a6ad0rr6s000\",\n                \"links\": {\n                    \"account\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000\",\n                    \"self\": \"https://api.teller.io/accounts/acc_ns9gkia42a6ad0rr6s000/transactions/txn_ns9gkiph2a6ad0rr6s000\"\n                },\n                \"running_balance\": null,\n                \"status\": \"pending\",\n                \"type\": \"digital_payment\"\n            }\n        ]\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -1223,10 +1255,12 @@
 											"raw": "{\n    \"type\": \"mx\",\n    \"mx\": {\n        \"account\": {\n            \"institution_code\": \"chase\",\n            \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n            \"account_number\": null,\n            \"apr\": null,\n            \"apy\": null,\n            \"available_balance\": 1000.23,\n            \"available_credit\": null,\n            \"balance\": 1000.23,\n            \"cash_balance\": 1000.32,\n            \"cash_surrender_value\": 1000.23,\n            \"created_at\": \"2016-10-13T17:57:37+00:00\"\n        },\n        \"transactions\": []\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/:accountId/verification",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
 												"accounts",
@@ -1259,10 +1293,12 @@
 													"raw": "{\n    \"type\": \"mx\",\n    \"mx\": {\n        \"account\": {\n            \"institution_code\": \"chase\",\n            \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n            \"account_number\": null,\n            \"apr\": null,\n            \"apy\": null,\n            \"available_balance\": 1000.23,\n            \"available_credit\": null,\n            \"balance\": 1000.23,\n            \"cash_balance\": 1000.32,\n            \"cash_surrender_value\": 1000.23,\n            \"created_at\": \"2016-10-13T17:57:37+00:00\"\n        },\n        \"transactions\": []\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -1333,10 +1369,12 @@
 													"raw": "{\n    \"type\": \"mx\",\n    \"mx\": {\n        \"account\": {\n            \"institution_code\": \"chase\",\n            \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n            \"account_number\": null,\n            \"apr\": null,\n            \"apy\": null,\n            \"available_balance\": 1000.23,\n            \"available_credit\": null,\n            \"balance\": 1000.23,\n            \"cash_balance\": 1000.32,\n            \"cash_surrender_value\": 1000.23,\n            \"created_at\": \"2016-10-13T17:57:37+00:00\"\n        }\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -1407,10 +1445,12 @@
 													"raw": "{\n    \"type\": \"mx\",\n    \"mx\": {\n        \"account\": {\n            \"institution_code\": \"chase\",\n            \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n            \"account_number\": null,\n            \"apr\": null,\n            \"apy\": null,\n            \"available_balance\": 1000.23,\n            \"available_credit\": null,\n            \"balance\": 1000.23,\n            \"cash_balance\": 1000.32,\n            \"cash_surrender_value\": 1000.23,\n            \"created_at\": \"2016-10-13T17:57:37+00:00\"\n        },\n        \"transactions\": []\n    }\n}"
 												},
 												"url": {
-													"raw": "http://{{env_url}}/accounts/:accountId/verification",
-													"protocol": "http",
+													"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+													"protocol": "https",
 													"host": [
-														"{{env_url}}"
+														"{{env}}",
+														"methodfi",
+														"com"
 													],
 													"path": [
 														"accounts",
@@ -1475,10 +1515,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{env_url}}/accounts/:accountId/verification",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"accounts",
@@ -1500,10 +1542,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://{{env_url}}/accounts/:accountId/verification",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
 												"accounts",
@@ -1564,10 +1608,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://{{env_url}}/accounts/:accountId/verification",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
 												"accounts",
@@ -1640,10 +1686,12 @@
 									"raw": "{\n    \"micro_deposits\": {\n        \"amounts\": [ 9, 29 ]\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/accounts/:accountId/verification",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"accounts",
@@ -1676,10 +1724,12 @@
 											"raw": "{\n    \"micro_deposits\": {\n        \"amounts\": [ 9, 29 ]\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/accounts/:accountId/verification",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/verification",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
 												"accounts",
@@ -1750,10 +1800,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{env_url}}/accounts/:accountId",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/accounts/:accountId",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"accounts",
@@ -1780,10 +1832,12 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{env_url}}/accounts/:accountId",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"accounts",
@@ -1849,10 +1903,12 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{env_url}}/accounts/:accountId",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"accounts",
@@ -1927,14 +1983,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{env_url}}/accounts/",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/accounts",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
-								"accounts",
-								""
+								"accounts"
 							]
 						},
 						"description": "### Parameters\n\n| Name        | Required    | Description |\n| ----------- | ----------- | ----------- |\n| `holder_id`      |       | The id of the `Entity` whose accounts to retrieve. |\n| `type`       |       | The type of accounts to retrieve. Options: `ach` or `liability`. |\n| `status` |       | The status of accounts to retrieve. Options: `active` or `disabled` |"
@@ -1956,14 +2013,15 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://{{env_url}}/accounts/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/accounts",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"accounts",
-										""
+										"accounts"
 									]
 								}
 							},
@@ -2050,14 +2108,15 @@
 									"raw": "{\n    \"type\": \"individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"entities",
-										""
+										"entities"
 									]
 								}
 							},
@@ -2079,14 +2138,15 @@
 											"raw": "{\n    \"type\": \"individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2147,14 +2207,15 @@
 											"raw": "{\n    \"type\": \"not_individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2215,14 +2276,15 @@
 											"raw": "{\n    \"type\": \"individual\",\n    \"corporation\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2285,14 +2347,15 @@
 									"raw": "{\n    \"type\": \"c_corporation\",\n    \"corporation\": {\n        \"name\": \"Alphabet Inc.\",\n        \"dba\": \"Google\",\n        \"ein\": \"641234567\",\n        \"owners\": [\n            {\n                \"first_name\": \"Sergey\",\n                \"last_name\": \"Brin\",\n                \"phone\": \"+16505555555\",\n                \"email\": \"sergey@google.com\",\n                \"dob\": \"1973-08-21\",\n                \"address\": {\n                    \"line1\": \"600 Amphitheatre Parkway\",\n                    \"line2\": null,\n                    \"city\": \"Mountain View\",\n                    \"state\": \"CA\",\n                    \"zip\": \"94043\"\n                }\n            }\n        ]\n    },\n    \"address\": {\n        \"line1\": \"1600 Amphitheatre Parkway\",\n        \"line2\": null,\n        \"city\": \"Mountain View\",\n        \"state\": \"CA\",\n        \"zip\": \"94043\"\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"entities",
-										""
+										"entities"
 									]
 								}
 							},
@@ -2314,14 +2377,15 @@
 											"raw": "{\n    \"type\": \"c_corporation\",\n    \"corporation\": {\n        \"name\": \"Alphabet Inc.\",\n        \"dba\": \"Google\",\n        \"ein\": \"641234567\",\n        \"owners\": [\n            {\n                \"first_name\": \"Sergey\",\n                \"last_name\": \"Brin\",\n                \"phone\": \"+16505555555\",\n                \"email\": \"sergey@google.com\",\n                \"dob\": \"1973-08-21\",\n                \"address\": {\n                    \"line1\": \"600 Amphitheatre Parkway\",\n                    \"line2\": null,\n                    \"city\": \"Mountain View\",\n                    \"state\": \"CA\",\n                    \"zip\": \"94043\"\n                }\n            }\n        ]\n    },\n    \"address\": {\n        \"line1\": \"1600 Amphitheatre Parkway\",\n        \"line2\": null,\n        \"city\": \"Mountain View\",\n        \"state\": \"CA\",\n        \"zip\": \"94043\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2387,14 +2451,15 @@
 											}
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2455,14 +2520,15 @@
 											"raw": "{\n    \"type\": \"c_corporation\",\n    \"individual\": {\n        \"name\": \"Alphabet Inc.\",\n        \"dba\": \"Google\",\n        \"ein\": \"641234567\",\n        \"owners\": [\n            {\n                \"first_name\": \"Sergey\",\n                \"last_name\": \"Brin\",\n                \"phone\": \"+16505555555\",\n                \"email\": \"sergey@google.com\",\n                \"dob\": \"1973-08-21\",\n                \"address\": {\n                    \"line1\": \"600 Amphitheatre Parkway\",\n                    \"line2\": null,\n                    \"city\": \"Mountain View\",\n                    \"state\": \"CA\",\n                    \"zip\": \"94043\"\n                }\n            }\n        ]\n    },\n    \"address\": {\n        \"line1\": \"1600 Amphitheatre Parkway\",\n        \"line2\": null,\n        \"city\": \"Mountain View\",\n        \"state\": \"CA\",\n        \"zip\": \"94043\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2525,14 +2591,15 @@
 									"raw": "{\n    \"type\": \"receive_only\",\n    \"receive_only\": {\n        \"name\": \"Kevin Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\"\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"entities",
-										""
+										"entities"
 									]
 								}
 							},
@@ -2554,14 +2621,15 @@
 											"raw": "{\n    \"type\": \"receive_only\",\n    \"receive_only\": {\n        \"name\": \"Kevin Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2622,14 +2690,15 @@
 											"raw": "{\n    \"type\": \"receive_only\",\n    \"receive_only\": {\n        \"name\": \"Kevin Doyle\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2690,14 +2759,15 @@
 											"raw": "{\n    \"type\": \"receive_only\",\n    \"corporation\": {\n        \"name\": \"Kevin Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\"\n    }\n}"
 										},
 										"url": {
-											"raw": "http://{{env_url}}/entities/",
-											"protocol": "http",
+											"raw": "https://{{env}}.methodfi.com/entities",
+											"protocol": "https",
 											"host": [
-												"{{env_url}}"
+												"{{env}}",
+												"methodfi",
+												"com"
 											],
 											"path": [
-												"entities",
-												""
+												"entities"
 											]
 										}
 									},
@@ -2751,14 +2821,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{env_url}}/entities/",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/entities",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
-								"entities",
-								""
+								"entities"
 							]
 						},
 						"description": "### Parameters\n\n| Name      | Description |\n| ----------- | ----------- |\n| type      | The type of entities to retrieve.       |\n| status   | The status of entities to retrieve. Options: `active`, `disabled`, or `incomplete`        |"
@@ -2770,14 +2841,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{env_url}}/entities/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"entities",
-										""
+										"entities"
 									]
 								}
 							},
@@ -2858,10 +2930,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{env_url}}/entities/:id",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/entities/:id",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"entities",
@@ -2892,10 +2966,12 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"entities",
@@ -2965,10 +3041,12 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"entities",
@@ -3040,10 +3118,12 @@
 							"raw": "{\n    \"address\": {\n        \"line1\": \"600 Amphitheatre Parkway\",\n        \"line2\": null,\n        \"city\": \"Mountain View\",\n        \"state\": \"CA\",\n        \"zip\": \"94043\"\n    }\n}"
 						},
 						"url": {
-							"raw": "http://{{env_url}}/entities/:id",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/entities/:id",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"entities",
@@ -3074,10 +3154,12 @@
 									"raw": "{\n    \"address\": {\n        \"line1\": \"600 Amphitheatre Parkway\",\n        \"line2\": null,\n        \"city\": \"Mountain View\",\n        \"state\": \"CA\",\n        \"zip\": \"94043\"\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"entities",
@@ -3147,10 +3229,12 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"entities",
@@ -3220,10 +3304,12 @@
 									"raw": "{\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"entities",
@@ -3293,10 +3379,12 @@
 									"raw": "{\n    \"individual\": {\n        \"first_name\": \"Name Updated\",\n        \"last_name\": \"LastName Updated\"\n    }\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/entities/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/entities/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"entities",
@@ -3376,10 +3464,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{env_url}}/merchants/?limit=1",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/merchants/?limit=1",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"merchants",
@@ -3407,14 +3497,15 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{env_url}}/merchants/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/merchants",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"merchants",
-										""
+										"merchants"
 									]
 								}
 							},
@@ -3466,10 +3557,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{env_url}}/merchants/:id",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/merchants/:id",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"merchants",
@@ -3491,10 +3584,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{env_url}}/merchants/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/merchants/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"merchants",
@@ -3554,10 +3649,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{env_url}}/merchants/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/merchants/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"merchants",
@@ -3634,10 +3731,12 @@
 							"raw": "{\n    \"amount\": 5000,\n    \"source\": \"acc_z8Gt94JZY8EY5\",\n    \"destination\": \"acc_d6yABh452M8fM\",\n    \"description\": \"Loan Pmt\"\n}"
 						},
 						"url": {
-							"raw": "http://{{env_url}}/payments",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/payments",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"payments"
@@ -3646,6 +3745,74 @@
 						"description": "### Parameters\n\n| Name        | Type        | Required    | Description |\n| ----------- | ----------- | ----------- | ----------- |\n| `amount`      | `integer`    |   true    | The amount of the payment to be created in cents. (e.g. $1.00 = 100)|\n| `source`      | `string`    |   true    | The `id` of an `ach` account from which the payment amount will be retrieved. |\n| `destination`      | `string`    |   true    | The  `id`  of an  `ach`  or  `liability`  account to which the payment amount will be sent. |\n| `description`      | `string`    |       | Optional description (maximum of 10 characters). |"
 					},
 					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 5000,\n    \"source\": \"acc_z8Gt94JZY8EY5\",\n    \"destination\": \"acc_d6yABh452M8fM\",\n    \"description\": \"Loan Pmt\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_AyYg4ikLXCGQK"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "413"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19d-qdPVH7FEJn8hDxW4l2mCFGpMtZw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:03:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"pmt_dra3wwVyUD\",\n        \"source\": \"acc_z8Gt94JZY8EY5\",\n        \"destination\": \"acc_d6yABh452M8fM\",\n        \"amount\": 5000,\n        \"description\": \"Loan Pmt\",\n        \"status\": \"pending\",\n        \"estimated_completion_date\": null,\n        \"source_trace_id\": null,\n        \"destination_trace_id\": null,\n        \"reversal_id\": null,\n        \"type\": \"standard\",\n        \"error\": null,\n        \"metadata\": null,\n        \"created_at\": \"2022-04-05T18:03:41.811Z\",\n        \"updated_at\": \"2022-04-05T18:03:41.811Z\"\n    },\n    \"message\": null\n}"
+						},
 						{
 							"name": "400 wrong source",
 							"originalRequest": {
@@ -3662,10 +3829,12 @@
 									"raw": "{\n    \"amount\": 5000,\n    \"source\": \"acc_d6yABh452M8fM\",\n    \"destination\": \"acc_z8Gt94JZY8EY5\",\n    \"description\": \"Loan Pmt\"\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/payments",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/payments",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"payments"
@@ -3728,10 +3897,12 @@
 									"raw": "{\n    \"source\": \"acc_z8Gt94JZY8EY5\",\n    \"destination\": \"acc_d6yABh452M8fM\",\n    \"description\": \"Loan Pmt\"\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/payments",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/payments",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"payments"
@@ -3792,10 +3963,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{env_url}}/payments/:paymentId",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/payments/:paymentId",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"payments",
@@ -3809,7 +3982,150 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments/:paymentId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments",
+										":paymentId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "{{payment_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_AHYPAfeMRCUD6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "441"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b9-2hgMB+mJOGyp0Q8nQ8Imq8O4lTw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:50:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"pmt_dra3wwVyUD\",\n        \"source\": \"acc_z8Gt94JZY8EY5\",\n        \"destination\": \"acc_d6yABh452M8fM\",\n        \"amount\": 5000,\n        \"description\": \"Loan Pmt\",\n        \"status\": \"processing\",\n        \"estimated_completion_date\": null,\n        \"source_trace_id\": null,\n        \"destination_trace_id\": null,\n        \"reversal_id\": null,\n        \"type\": \"standard\",\n        \"error\": null,\n        \"metadata\": null,\n        \"created_at\": \"2022-04-05T18:03:41.829Z\",\n        \"updated_at\": \"2022-04-05T18:30:05.087Z\",\n        \"fund_status\": \"clearing\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments/:paymentId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments",
+										":paymentId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "wrong_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_WUUVQdsiXBTcF"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-A5JDin7GIDDumv5Flw9X6nTlDo4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:52:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						}
+					]
 				},
 				{
 					"name": "List Payments",
@@ -3823,10 +4139,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{env_url}}/payments",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/payments",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"payments"
@@ -3834,7 +4152,88 @@
 						},
 						"description": "### Parameters\n\n| Name        | Required    | Description |\n| ----------- | -------- | ----------- |\n| `type`      |       | The type of payments to retrieve. Options: `standard` or `clearing` |\n| `status`       |       | The status of payments to retrieve. See [payment statuses](https://docs.methodfi.com/api/core/payments/object#payment-statuses) |\n| `source` |       | The id of the `Account` that is a payment's source. |\n| `destination` |       | The id of the `Account` that is a payment's destination. |\n| `reversal_id` |       | The id of the `Reversal` corresponding to a payment. |"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Pagination-Page",
+									"value": "1"
+								},
+								{
+									"key": "Pagination-Page-Count",
+									"value": "1"
+								},
+								{
+									"key": "Pagination-Page-Limit",
+									"value": "0"
+								},
+								{
+									"key": "Pagination-Total-Count",
+									"value": "1"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_yWKwAr6nhT4RH"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2-yo3RNl91ciwGRhqF3f7GJ4qQDyM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:52:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"pmt_dra3wwVyUD\",\n            \"source\": \"acc_z8Gt94JZY8EY5\",\n            \"destination\": \"acc_d6yABh452M8fM\",\n            \"amount\": 5000,\n            \"description\": \"Loan Pmt\",\n            \"status\": \"processing\",\n            \"estimated_completion_date\": null,\n            \"source_trace_id\": null,\n            \"destination_trace_id\": null,\n            \"reversal_id\": null,\n            \"type\": \"standard\",\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-04-05T18:03:41.829Z\",\n            \"updated_at\": \"2022-04-05T18:30:05.087Z\"\n        }\n    ],\n    \"message\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete Payment",
@@ -3848,10 +4247,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{env_url}}/payments/:paymentId",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/payments/:paymentId",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"payments",
@@ -3865,7 +4266,150 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments/:paymentId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments",
+										":paymentId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "wrong_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_ygq9eF2RwAmsV"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-A5JDin7GIDDumv5Flw9X6nTlDo4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:53:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						},
+						{
+							"name": "400 invalid status",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments/:paymentId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments",
+										":paymentId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "{{payment_id}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_6azQ5DcD7xjFK"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a0-M7gX+u4YBhxme1R8VE5p70hiJnM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:53:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 400,\n            \"code\": 400,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"INVALID_STATUS\",\n            \"message\": \"Payment cannot be canceled as it is not in a pending state. Payments can only be canceled in \\\"Pending\\\" status.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"BadRequest\"\n        }\n    },\n    \"message\": \"Payment cannot be canceled as it is not in a pending state. Payments can only be canceled in \\\"Pending\\\" status.\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3888,14 +4432,15 @@
 							"raw": "{\n    \"type\": \"payment.update\",\n    \"url\": \"https://api.example.app/webhook\",\n    \"auth_token\": \"md7UqcTSmvXCBzPORDwOkE\"\n}"
 						},
 						"url": {
-							"raw": "http://{{env_url}}/webhooks/",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/webhooks",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
-								"webhooks",
-								""
+								"webhooks"
 							]
 						},
 						"description": "### Parameters\n\n| Name        | Type        | Required    | Description |\n| ----------- | ----------- | ----------- | ----------- |\n| `type`      | `string`    |   true    | The event type to be sent to this url. See `Webhook Events` for all available events. |\n| `url`      | `string`    |   true    | The HTTPS URL receiving the webhook event. |\n| `auth_token`      | `string`    |       | Secret token for request validation. Will be sent as a `base64` encoded string in the `Authorization` header of the webhook. |"
@@ -3917,14 +4462,15 @@
 									"raw": "{\n    \"type\": \"payment.update\",\n    \"url\": \"https://api.example.app/webhook\",\n    \"auth_token\": \"md7UqcTSmvXCBzPORDwOkE\"\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/webhooks/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/webhooks",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"webhooks",
-										""
+										"webhooks"
 									]
 								}
 							},
@@ -3984,14 +4530,15 @@
 									"raw": "{\n    \"url\": \"https://api.example.app/webhook\",\n    \"auth_token\": \"md7UqcTSmvXCBzPORDwOkE\"\n}"
 								},
 								"url": {
-									"raw": "http://{{env_url}}/webhooks/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/webhooks",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"webhooks",
-										""
+										"webhooks"
 									]
 								}
 							},
@@ -4043,10 +4590,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{env_url}}/webhooks/:id",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/webhooks/:id",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"webhooks",
@@ -4063,78 +4612,17 @@
 					},
 					"response": [
 						{
-							"name": "400 id not found",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://{{env_url}}/webhooks/:id",
-									"protocol": "http",
-									"host": [
-										"{{env_url}}"
-									],
-									"path": [
-										"webhooks",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "{{webhook_id}}"
-										}
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Request-Id",
-									"value": "adt_ejBUx6RYRVewr"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "352"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"160-A5JDin7GIDDumv5Flw9X6nTlDo4\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 01 Apr 2022 18:43:12 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
-						},
-						{
 							"name": "200 OK",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{env_url}}/webhooks/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/webhooks/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"webhooks",
@@ -4187,6 +4675,71 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"whk_46gEUiZhMWkz3\",\n        \"type\": \"payment.update\",\n        \"url\": \"https://api.example.app/webhook\",\n        \"metadata\": null,\n        \"created_at\": \"2022-04-01T18:32:52.964Z\",\n        \"updated_at\": \"2022-04-01T18:32:52.964Z\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "400 id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/webhooks/:id",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"webhooks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{webhook_id}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_ejBUx6RYRVewr"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-A5JDin7GIDDumv5Flw9X6nTlDo4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Apr 2022 18:43:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
 						}
 					]
 				},
@@ -4196,10 +4749,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{env_url}}/webhooks/:id",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/webhooks/:id",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"webhooks",
@@ -4220,10 +4775,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{env_url}}/webhooks/:id",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/webhooks/:id",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
 										"webhooks",
@@ -4285,14 +4842,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{env_url}}/webhooks/",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/webhooks",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
-								"webhooks",
-								""
+								"webhooks"
 							]
 						}
 					},
@@ -4303,14 +4861,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{env_url}}/webhooks/",
-									"protocol": "http",
+									"raw": "https://{{env}}.methodfi.com/webhooks",
+									"protocol": "https",
 									"host": [
-										"{{env_url}}"
+										"{{env}}",
+										"methodfi",
+										"com"
 									],
 									"path": [
-										"webhooks",
-										""
+										"webhooks"
 									]
 								}
 							},
@@ -4377,10 +4936,12 @@
 							"raw": "{\n    \"type\": \"payments.created.current\"\n}"
 						},
 						"url": {
-							"raw": "http://{{env_url}}/reports",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/reports",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"reports"
@@ -4388,7 +4949,144 @@
 						},
 						"description": "### Parameters\n\n| Name        | Type        | Required    | Description |\n| ----------- | ----------- | ----------- | ----------- |\n| `type`      | `string`    |   true    | The type of report to generate. See _Report Types_ for all available types.|"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"payments.created.current\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/reports",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"reports"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_rnd6nhGUKVBg5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "281"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"119-410NN4lMpGrHYYTmOxHh12fq8nE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:05:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"rpt_hnTFhZUewHjSg\",\n        \"type\": \"payments.created.current\",\n        \"url\": \"https://dev.methodfi.com/reports/rpt_hnTFhZUewHjSg/download\",\n        \"status\": \"completed\",\n        \"metadata\": null,\n        \"created_at\": \"2022-04-05T18:05:51.167Z\",\n        \"updated_at\": \"2022-04-05T18:05:51.167Z\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "400 required field missing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/reports",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"reports"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_qJ5tjza4aWYqZ"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "317"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13d-qDgw72CcycXHRK+jdJTQZ+tLBys\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 18:57:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 400,\n            \"code\": 400,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"INVALID_REQUEST\",\n            \"message\": \"Field \\\"type\\\" is required. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"BadRequest\"\n        }\n    },\n    \"message\": \"Field \\\"type\\\" is required. Verify your request and try again.\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Retrieve Report",
@@ -4396,10 +5094,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{env_url}}/reports/:reportId",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/reports/:reportId",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"reports",
@@ -4408,12 +5108,143 @@
 							"variable": [
 								{
 									"key": "reportId",
-									"value": "{{report_id}}"
+									"value": ""
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/reports/:reportId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"reports",
+										":reportId"
+									],
+									"variable": [
+										{
+											"key": "reportId",
+											"value": "{{report_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_StTQ6TMhzJUM8"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "281"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"119-OcPYOoeu0ZyH/yuEYJ1NBjYDElM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 19:00:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"rpt_hnTFhZUewHjSg\",\n        \"type\": \"payments.created.current\",\n        \"url\": \"https://dev.methodfi.com/reports/rpt_hnTFhZUewHjSg/download\",\n        \"status\": \"completed\",\n        \"metadata\": null,\n        \"created_at\": \"2022-04-05T18:05:52.129Z\",\n        \"updated_at\": \"2022-04-05T18:05:52.129Z\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/reports/:reportId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"reports",
+										":reportId"
+									],
+									"variable": [
+										{
+											"key": "reportId",
+											"value": "wrong_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_YsLrrdbjtHWtG"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-A5JDin7GIDDumv5Flw9X6nTlDo4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 19:01:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Download Report",
@@ -4421,10 +5252,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{env_url}}/reports/:reportId/download",
-							"protocol": "http",
+							"raw": "https://{{env}}.methodfi.com/reports/:reportId/download",
+							"protocol": "https",
 							"host": [
-								"{{env_url}}"
+								"{{env}}",
+								"methodfi",
+								"com"
 							],
 							"path": [
 								"reports",
@@ -4439,7 +5272,140 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/reports/:reportId/download",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"reports",
+										":reportId",
+										"download"
+									],
+									"variable": [
+										{
+											"key": "reportId",
+											"value": "{{report_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/csv; charset=utf-8"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=\"report_rpt_hnTFhZUewHjSg.csv\""
+								},
+								{
+									"key": "Content-Length",
+									"value": "434"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b2-AqVcAxziFmf8NDxxEaS9ZgunXEA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 19:02:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "\"payment_id\",\"payment_fund_status\",\"payment_status\",\"payment_amount\",\"payment_created_at\",\"payment_updated_at\",\"payment_source_account_id\",\"payment_source_holder_id\",\"payment_destination_holder_id\",\"payment_destination_account_id\",\"payment_metadata\"\n\"pmt_dra3wwVyUD\",\"pending_funds\",\"pending\",5000,\"2022-04-05T18:03:41.829Z\",\"2022-04-05T18:03:46.360Z\",\"acc_z8Gt94JZY8EY5\",\"ent_hybiaAZaQUSZg\",\"ent_hybiaAZaQUSZg\",\"acc_d6yABh452M8fM\",\"\""
+						},
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/reports/:reportId/download",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"reports",
+										":reportId",
+										"download"
+									],
+									"variable": [
+										{
+											"key": "reportId",
+											"value": "wrong_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Request-Id",
+									"value": "adt_jKpLEgXzVBZSd"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-A5JDin7GIDDumv5Flw9X6nTlDo4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Apr 2022 19:03:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						}
+					]
 				}
 			]
 		}
