@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "098f3ca9-2a37-4bba-a93e-6dd86af1c782",
+		"_postman_id": "1c9efc52-04bc-4b35-8843-5f349d37a4cb",
 		"name": "Method API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -2008,10 +2008,6 @@
 										"type": "default"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{env}}.methodfi.com/accounts",
 									"protocol": "https",
@@ -2816,6 +2812,623 @@
 					]
 				},
 				{
+					"name": "Auth Session",
+					"item": [
+						{
+							"name": "Create Auth Session",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/entities/:id/auth_session",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"entities",
+										":id",
+										"auth_session"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{entity_id}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/entities/:id/auth_session",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"entities",
+												":id",
+												"auth_session"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{entity_id}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 17:02:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "6fe734bf6a4b5c9b-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"300-rHzPV8ZwG/A8MZnV7FurkoOm/ok\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_kzUc8CLP4QiHc"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_kzUc8CLP4QiHc"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=6jc2Ot4ZAdkF%2FEUjxpqL%2BBizfVHtK0OS1s%2BdYV9G3QsJhNaSZs%2BY8IQkIgFZxpEpqAdd5Zl0zSoMe1qvXRR9sg%2FDRgPlsCjSZGTK73OvLMU%2B9ItSpgXQrUXdmHRqoiC67k8%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"questions\": [\n            {\n                \"id\": \"qtn_ya6YBACLCzABQ\",\n                \"text\": \"Question 1?\",\n                \"answers\": [\n                    {\n                        \"id\": \"ans_P52gETRX6c52U\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_SsRR7cWcyq3pi\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_A3mZqME3FpMmg\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_2G3CfUUSZ5GG6\",\n                        \"text\": \"Incorrect\"\n                    }\n                ]\n            },\n            {\n                \"id\": \"qtn_GRj5RKsSYYKjS\",\n                \"text\": \"Question 2?\",\n                \"answers\": [\n                    {\n                        \"id\": \"ans_Df82LYYw6rfgy\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_JqVZhDSWAKS4z\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_bCU32BGY2eUfh\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_aDZhTNG22ZKt9\",\n                        \"text\": \"Incorrect\"\n                    }\n                ]\n            },\n            {\n                \"id\": \"qtn_wXBwdzwSxsPtz\",\n                \"text\": \"Question 3?\",\n                \"answers\": [\n                    {\n                        \"id\": \"ans_e37w4kBimPEeb\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_Uh2er6t43UP8Z\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_TbVg4sZJfX2E4\",\n                        \"text\": \"Correct\"\n                    },\n                    {\n                        \"id\": \"ans_Q9eJ7izJYyT2x\",\n                        \"text\": \"Incorrect\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "400 no data:retrieve capability",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/entities/:id/auth_session",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"entities",
+												":id",
+												"auth_session"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{entity_id}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 17:03:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "331"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "6fe736c22c9b591a-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"14b-rQj2qN/UBdIL84nrBNJVgBgd2uo\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_qTUcH7hRgUbp8"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_qTUcH7hRgUbp8"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=eav7iBKWy%2F%2FgipSkd0bZW57NzqnC0JRQSCrLhNzqtToMcE5wIkknoNJJhPV%2FMvj3FHWxMtbc5Fhq3MZMhus0itRDCoXS1E%2BT86prNpqoeJRkMvwN9O4DN46dzghQyln7uxc%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"ENTITY_CAPABILITY_UNAVAILABLE\",\n            \"message\": \"Entity must have `data:retrieve` as an available capability. Verify your request and try again.\"\n        }\n    },\n    \"message\": \"Entity must have `data:retrieve` as an available capability. Verify your request and try again.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Auth Session",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"answers\": [\n        {\n            \"question_id\": \"qtn_ya6YBACLCzABQ\",\n            \"answer_id\": \"ans_SsRR7cWcyq3pi\"\n        },\n        {\n            \"question_id\": \"qtn_GRj5RKsSYYKjS\",\n            \"answer_id\": \"ans_Df82LYYw6rfgy\"\n        },\n        {\n            \"question_id\": \"qtn_wXBwdzwSxsPtz\",\n            \"answer_id\": \"ans_e37w4kBimPEeb\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/entities/:id/auth_session",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"entities",
+										":id",
+										"auth_session"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{entity_id}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"answers\": [\n        {\n            \"question_id\": \"qtn_ya6YBACLCzABQ\",\n            \"answer_id\": \"ans_SsRR7cWcyq3pi\"\n        },\n        {\n            \"question_id\": \"qtn_GRj5RKsSYYKjS\",\n            \"answer_id\": \"ans_Df82LYYw6rfgy\"\n        },\n        {\n            \"question_id\": \"qtn_wXBwdzwSxsPtz\",\n            \"answer_id\": \"ans_e37w4kBimPEeb\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/entities/:id/auth_session",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"entities",
+												":id",
+												"auth_session"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{entity_id}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 17:10:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "6fe7411e4f34380b-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"54-t5QKDwCBJBqxdWd5svx2955kfAo\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_CYxPdBqUaqY8L"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_CYxPdBqUaqY8L"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Wo1sd%2BEUoeRryusNmhy3OOj2C45zV630H5rGgkCEnjBKFXkqxxAO5QQkrLlvalot%2FoUFGRWWuL89UlggqrRpOsx%2BMB4iBbAp07cuHrqFLo0CxKnTIkumAqQtd%2FoQgh5csio%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"questions\": [],\n        \"cxn_id\": \"cxn_Qr6SrVh8DiZTd\"\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "400 no data:retrieve capability",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"answers\": [\n        {\n            \"question_id\": \"qtn_ya6YBACLCzABQ\",\n            \"answer_id\": \"ans_SsRR7cWcyq3pi\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/entities/:id/auth_session",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"entities",
+												":id",
+												"auth_session"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{entity_id}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 17:05:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "331"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "6fe7395d2cde5cac-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"14b-rQj2qN/UBdIL84nrBNJVgBgd2uo\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_fPhrtDVGeVHJQ"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_fPhrtDVGeVHJQ"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=JkMU2Gy9uV%2Bu89jQychpA9gHHE6ULSU3Dv2hlZp352JK0jFT6ZmoNs0wbvIsgnp8Qq86jHEZ5lGCpMsXl9ZugvF9do2%2FKtBqJbyHrSRyPcr1nScL6Z9qQiIWw8hvr85R7HU%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"ENTITY_CAPABILITY_UNAVAILABLE\",\n            \"message\": \"Entity must have `data:retrieve` as an available capability. Verify your request and try again.\"\n        }\n    },\n    \"message\": \"Entity must have `data:retrieve` as an available capability. Verify your request and try again.\"\n}"
+								},
+								{
+									"name": "400 invalid questions",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"answers\": [\n        {\n            \"question_id\": \"qtn_ya6YBACLCzABQ\",\n            \"answer_id\": \"ans_SsRR7cWcyq3pi\"\n        },\n        {\n            \"question_id\": \"qtn_ya6YBACLCzABQ\",\n            \"answer_id\": \"ans_SsRR7cWcyq3pi\"\n        },\n        {\n            \"question_id\": \"qtn_ya6YBACLCzABQ\",\n            \"answer_id\": \"ans_SsRR7cWcyq3pi\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/entities/:id/auth_session",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"entities",
+												":id",
+												"auth_session"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{entity_id}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 17:05:52 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "367"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "6fe73a3c6bd98203-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"16f-wdmc/cFlXaFpU7C+7urMueaAVAY\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_EC4D3Gk997VaN"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_EC4D3Gk997VaN"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=s6VnXDxMm3L7%2FiVDo81Tm5CGPfma%2FuoPcJ72eUPtFnyvlSLjc1ag2TQ5KSJ4dC0jdU8JlRmFpuNFWL9p0NTcUylPIUDjigAQcOV6pglfDRxaYgCKd3NIeJ2Tq0tBCfhuaDg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"INVALID_ENTITY_AUTH_QUESTIONS\",\n            \"message\": \"Invalid entity auth session questions. A question is either missing or invalid. Verify your request and try again\"\n        }\n    },\n    \"message\": \"Invalid entity auth session questions. A question is either missing or invalid. Verify your request and try again\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "List Entities",
 					"request": {
 						"method": "GET",
@@ -2961,10 +3574,6 @@
 										"type": "default"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{env}}.methodfi.com/entities/:id",
 									"protocol": "https",
@@ -3036,10 +3645,6 @@
 										"type": "default"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{env}}.methodfi.com/entities/:id",
 									"protocol": "https",
@@ -3437,6 +4042,141 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 400,\n            \"code\": 400,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"ENTITY_UPDATE_INVALID\",\n            \"message\": \"Updates are only allowed on fields that have not been set. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"BadRequest\"\n        }\n    },\n    \"message\": \"Updates are only allowed on fields that have not been set. Verify your request and try again.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Capabilities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/entities/:id/refresh_capabilities",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"entities",
+								":id",
+								"refresh_capabilities"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{entity_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/entities/:id/refresh_capabilities",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"entities",
+										":id",
+										"refresh_capabilities"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{entity_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Apr 2022 17:11:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "6fe7424d6d829c54-IAD"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25d-U6pa3vMkFAwuiEwXCzXXliXhvDU\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Idem-Request-Id",
+									"value": "adt_fBgHdKPHBdiga"
+								},
+								{
+									"key": "Idem-Status",
+									"value": "bypassed"
+								},
+								{
+									"key": "Idem-Version",
+									"value": "dev.22f7868"
+								},
+								{
+									"key": "request-id",
+									"value": "adt_fBgHdKPHBdiga"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=%2BrfEiGKG%2FhGlza7HrltbxhzC8DwtZLxMdAJrpqFpgbsy3cFqL09cVH2iNelUj09FdFsCU8L%2F9vaIiwCHO2njsNfYquR%2F%2BhDQVRXNxN9NxgU0JD%2BILYEoXTBYyeYAnRJCSv8%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"ent_yqw7BZgtmHgdi\",\n        \"type\": \"individual\",\n        \"individual\": {\n            \"first_name\": \"Kevin\",\n            \"last_name\": \"Doyle\",\n            \"phone\": \"+15121231111\",\n            \"dob\": \"1997-03-18\",\n            \"email\": \"kevin.doyle@gmail.com\"\n        },\n        \"corporation\": null,\n        \"receive_only\": null,\n        \"capabilities\": [\n            \"payments:receive\",\n            \"payments:send\",\n            \"data:retrieve\"\n        ],\n        \"available_capabilities\": [],\n        \"pending_capabilities\": [],\n        \"error\": null,\n        \"address\": {\n            \"line1\": \"3300 N Interstate 35\",\n            \"line2\": null,\n            \"city\": \"Austin\",\n            \"state\": \"Texas\",\n            \"zip\": \"78705\"\n        },\n        \"status\": \"active\",\n        \"metadata\": null,\n        \"created_at\": \"2022-04-19T17:01:36.934Z\",\n        \"updated_at\": \"2022-04-19T17:10:40.272Z\"\n    },\n    \"message\": null\n}"
 						}
 					]
 				}
