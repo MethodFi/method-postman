@@ -2101,7 +2101,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"type\": \"individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
+									"raw": "{\n    \"type\": \"individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"TX\",\n        \"zip\": \"78705\"\n    }\n}"
 								},
 								"url": {
 									"raw": "https://{{env}}.methodfi.com/entities",
@@ -2131,7 +2131,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"type\": \"individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
+											"raw": "{\n    \"type\": \"individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"TX\",\n        \"zip\": \"78705\"\n    }\n}"
 										},
 										"url": {
 											"raw": "https://{{env}}.methodfi.com/entities",
@@ -2184,7 +2184,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"ent_hybiaAZaQUSZg\",\n        \"type\": \"individual\",\n        \"individual\": {\n            \"first_name\": \"Kevin\",\n            \"last_name\": \"Doyle\",\n            \"phone\": \"+16505555555\",\n            \"dob\": \"1997-03-18\",\n            \"email\": \"kevin.doyle@gmail.com\"\n        },\n        \"corporation\": null,\n        \"receive_only\": null,\n        \"capabilities\": [\n            \"payments:receive\",\n            \"payments:send\"\n        ],\n        \"available_capabilities\": [],\n        \"pending_capabilities\": [],\n        \"error\": null,\n        \"address\": {\n            \"line1\": \"3300 N Interstate 35\",\n            \"line2\": null,\n            \"city\": \"Austin\",\n            \"state\": \"Texas\",\n            \"zip\": \"78705\"\n        },\n        \"status\": \"active\",\n        \"metadata\": null,\n        \"created_at\": \"2022-03-31T17:05:07.683Z\",\n        \"updated_at\": \"2022-03-31T17:05:07.683Z\"\n    },\n    \"message\": null\n}"
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"ent_hybiaAZaQUSZg\",\n        \"type\": \"individual\",\n        \"individual\": {\n            \"first_name\": \"Kevin\",\n            \"last_name\": \"Doyle\",\n            \"phone\": \"+16505555555\",\n            \"dob\": \"1997-03-18\",\n            \"email\": \"kevin.doyle@gmail.com\"\n        },\n        \"corporation\": null,\n        \"receive_only\": null,\n        \"capabilities\": [\n            \"payments:receive\",\n            \"payments:send\"\n        ],\n        \"available_capabilities\": [],\n        \"pending_capabilities\": [],\n        \"error\": null,\n        \"address\": {\n            \"line1\": \"3300 N Interstate 35\",\n            \"line2\": null,\n            \"city\": \"Austin\",\n            \"state\": \"TX\",\n            \"zip\": \"78705\"\n        },\n        \"status\": \"active\",\n        \"metadata\": null,\n        \"created_at\": \"2022-03-31T17:05:07.683Z\",\n        \"updated_at\": \"2022-03-31T17:05:07.683Z\"\n    },\n    \"message\": null\n}"
 								},
 								{
 									"name": "400 wrong type",
@@ -2200,7 +2200,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"type\": \"not_individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
+											"raw": "{\n    \"type\": \"not_individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"TX\",\n        \"zip\": \"78705\"\n    }\n}"
 										},
 										"url": {
 											"raw": "https://{{env}}.methodfi.com/entities",
@@ -2269,7 +2269,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"type\": \"individual\",\n    \"corporation\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
+											"raw": "{\n    \"type\": \"individual\",\n    \"corporation\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"TX\",\n        \"zip\": \"78705\"\n    }\n}"
 										},
 										"url": {
 											"raw": "https://{{env}}.methodfi.com/entities",
@@ -3520,7 +3520,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"ent_hybiaAZaQUSZg\",\n            \"type\": \"individual\",\n            \"individual\": {\n                \"first_name\": \"Kevin\",\n                \"last_name\": \"Doyle\",\n                \"phone\": \"+16505555555\",\n                \"dob\": \"1997-03-18\",\n                \"email\": \"kevin.doyle@gmail.com\"\n            },\n            \"corporation\": null,\n            \"receive_only\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"payments:send\"\n            ],\n            \"available_capabilities\": [],\n            \"pending_capabilities\": [],\n            \"error\": null,\n            \"address\": {\n                \"line1\": \"3300 N Interstate 35\",\n                \"line2\": null,\n                \"city\": \"Austin\",\n                \"state\": \"Texas\",\n                \"zip\": \"78705\"\n            },\n            \"status\": \"active\",\n            \"metadata\": null,\n            \"created_at\": \"2022-03-31T17:05:07.694Z\",\n            \"updated_at\": \"2022-03-31T17:05:07.694Z\"\n        }\n    ],\n    \"message\": null\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"ent_hybiaAZaQUSZg\",\n            \"type\": \"individual\",\n            \"individual\": {\n                \"first_name\": \"Kevin\",\n                \"last_name\": \"Doyle\",\n                \"phone\": \"+16505555555\",\n                \"dob\": \"1997-03-18\",\n                \"email\": \"kevin.doyle@gmail.com\"\n            },\n            \"corporation\": null,\n            \"receive_only\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"payments:send\"\n            ],\n            \"available_capabilities\": [],\n            \"pending_capabilities\": [],\n            \"error\": null,\n            \"address\": {\n                \"line1\": \"3300 N Interstate 35\",\n                \"line2\": null,\n                \"city\": \"Austin\",\n                \"state\": \"TX\",\n                \"zip\": \"78705\"\n            },\n            \"status\": \"active\",\n            \"metadata\": null,\n            \"created_at\": \"2022-03-31T17:05:07.694Z\",\n            \"updated_at\": \"2022-03-31T17:05:07.694Z\"\n        }\n    ],\n    \"message\": null\n}"
 						}
 					]
 				},
@@ -4176,7 +4176,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"ent_yqw7BZgtmHgdi\",\n        \"type\": \"individual\",\n        \"individual\": {\n            \"first_name\": \"Kevin\",\n            \"last_name\": \"Doyle\",\n            \"phone\": \"+15121231111\",\n            \"dob\": \"1997-03-18\",\n            \"email\": \"kevin.doyle@gmail.com\"\n        },\n        \"corporation\": null,\n        \"receive_only\": null,\n        \"capabilities\": [\n            \"payments:receive\",\n            \"payments:send\",\n            \"data:retrieve\"\n        ],\n        \"available_capabilities\": [],\n        \"pending_capabilities\": [],\n        \"error\": null,\n        \"address\": {\n            \"line1\": \"3300 N Interstate 35\",\n            \"line2\": null,\n            \"city\": \"Austin\",\n            \"state\": \"Texas\",\n            \"zip\": \"78705\"\n        },\n        \"status\": \"active\",\n        \"metadata\": null,\n        \"created_at\": \"2022-04-19T17:01:36.934Z\",\n        \"updated_at\": \"2022-04-19T17:10:40.272Z\"\n    },\n    \"message\": null\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"ent_yqw7BZgtmHgdi\",\n        \"type\": \"individual\",\n        \"individual\": {\n            \"first_name\": \"Kevin\",\n            \"last_name\": \"Doyle\",\n            \"phone\": \"+15121231111\",\n            \"dob\": \"1997-03-18\",\n            \"email\": \"kevin.doyle@gmail.com\"\n        },\n        \"corporation\": null,\n        \"receive_only\": null,\n        \"capabilities\": [\n            \"payments:receive\",\n            \"payments:send\",\n            \"data:retrieve\"\n        ],\n        \"available_capabilities\": [],\n        \"pending_capabilities\": [],\n        \"error\": null,\n        \"address\": {\n            \"line1\": \"3300 N Interstate 35\",\n            \"line2\": null,\n            \"city\": \"Austin\",\n            \"state\": \"TX\",\n            \"zip\": \"78705\"\n        },\n        \"status\": \"active\",\n        \"metadata\": null,\n        \"created_at\": \"2022-04-19T17:01:36.934Z\",\n        \"updated_at\": \"2022-04-19T17:10:40.272Z\"\n    },\n    \"message\": null\n}"
 						}
 					]
 				}
