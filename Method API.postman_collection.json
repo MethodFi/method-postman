@@ -279,7 +279,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"acc_d6yABh452M8fM\",\n        \"holder_id\": \"ent_hybiaAZaQUSZg\",\n        \"status\": \"active\",\n        \"type\": \"liability\",\n        \"ach\": null,\n        \"liability\": {\n            \"mch_id\": \"mch_2\",\n            \"mask\": \"4455\"\n        },\n        \"clearing\": null,\n        \"capabilities\": [\n            \"payments:receive\"\n        ],\n        \"error\": null,\n        \"metadata\": null,\n        \"created_at\": \"2022-04-01T19:10:50.399Z\",\n        \"updated_at\": \"2022-04-01T19:10:50.399Z\"\n    },\n    \"message\": null\n}"
+									"body": "{\n    \"success\": true,\n    \"data\": {\n    \"id\": \"acc_Zc4F2aTLt8CBt\",\n    \"holder_id\": \"ent_au22b1fbFJbp8\",\n    \"type\": \"liability\",\n    \"ach\": null,\n    \"liability\": {\n        \"mch_id\": \"mch_2\",\n        \"mask\": \"4455\",\n        \"type\": \"student_loan\",\n        \"data_status\": \"pending\",\n        \"data_last_successful_sync\": null,\n        \"student_loan\": {\n        \"name\": \"FedLoan Student Loan\",\n        \"sub_type\": \"federal\",\n        \"sequence\": 6,\n        \"balance\": 1952634,\n        \"last_payment_amount\": 1150,\n        \"last_payment_date\": \"2022-04-22\",\n        \"next_payment_due_date\": \"2022-10-28\",\n        \"next_payment_minimum_amount\": 0,\n        \"disbursed_at\": \"2018-01-22\",\n        \"interest_rate_percentage\": 3.4,\n        \"interest_rate_type\": \"fixed\"\n        }\n    },\n    \"clearing\": null,\n    \"metadata\": null,\n    \"status\": \"active\",\n    \"capabilities\": [\n        \"payments:receive\",\n        \"data:sync\"\n    ],\n    \"error\": null,\n    \"created_at\": \"2020-12-09T02:56:19.548Z\",\n    \"updated_at\": \"2020-12-09T02:56:19.548Z\"\n    },\n    \"message\": null\n}"
 								},
 								{
 									"name": "400 no ach or liability object",
@@ -1789,6 +1789,576 @@
 					]
 				},
 				{
+					"name": "Sync",
+					"item": [
+						{
+							"name": "Create Sync",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId/syncs",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										":accountId",
+										"syncs"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/syncs",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"syncs"
+											],
+											"variable": [
+												{
+													"key": "accountId",
+													"value": "{{account_id}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"acc_sync_6d94yUUMjbcXL\",\n        \"acc_id\": \"acc_Zc4F2aTLt8CBt\",\n        \"status\": \"in_progress\",\n        \"error\": null,\n        \"created_at\": \"2022-06-14T15:10:28.213Z\",\n        \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "404 id not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/syncs",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"syncs"
+											],
+											"variable": [
+												{
+													"key": "accountId",
+													"value": "{{account_id}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Bulk Sync",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"acc_ids\": [\n        \"acc_XGyGwCKLdnJBQ\",\n        \"acc_9H9atezg6g6Le\",\n        \"acc_LGheLaLYXdbb3\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/bulk_sync",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										"bulk_sync"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 Partial Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"acc_ids\": [\n        \"acc_XGyGwCKLdnJBQ\",\n        \"acc_9H9atezg6g6Le\",\n        \"acc_LGheLaLYXdbb3\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/bulk_sync",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												"bulk_sync"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": [\"acc_XGyGwCKLdnJBQ\", \"acc_9H9atezg6g6Le\"],\n        \"failed\": [\"acc_LGheLaLYXdbb3\"],\n        \"results\": [\n            {\n                \"id\": \"acc_sync_6d94yUUMjbcXL\",\n                \"acc_id\": \"acc_XGyGwCKLdnJBQ\",\n                \"status\": \"in_progress\",\n                \"error\": null,\n                \"created_at\": \"2022-06-14T15:10:28.213Z\",\n                \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n            },\n            {\n                \"id\": \"acc_sync_23KLdh35DsdD83\",\n                \"acc_id\": \"acc_9H9atezg6g6Le\",\n                \"status\": \"in_progress\",\n                \"error\": null,\n                \"created_at\": \"2022-06-14T15:10:28.213Z\",\n                \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n            }\n        ]\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "200 all failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"acc_ids\": [\n        \"acc_XGyGwCKLdnJBQ\",\n        \"acc_9H9atezg6g6Le\",\n        \"acc_LGheLaLYXdbb3\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/bulk_sync",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												"bulk_sync"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": [],\n        \"failed\": [\n            \"acc_XGyGwCKLdnJBQ\",\n            \"acc_9H9atezg6g6Le\",\n            \"acc_LGheLaLYXdbb3\"\n        ],\n        \"results\": []\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"acc_ids\": [\n        \"acc_XGyGwCKLdnJBQ\",\n        \"acc_9H9atezg6g6Le\",\n        \"acc_LGheLaLYXdbb3\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/bulk_sync",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												"bulk_sync"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": [\n            \"acc_XGyGwCKLdnJBQ\",\n            \"acc_9H9atezg6g6Le\",\n            \"acc_LGheLaLYXdbb3\"\n        ],\n        \"failed\": [],\n        \"results\": [\n            {\n                \"id\": \"acc_sync_6d94yUUMjbcXL\",\n                \"acc_id\": \"acc_XGyGwCKLdnJBQ\",\n                \"status\": \"in_progress\",\n                \"error\": null,\n                \"created_at\": \"2022-06-14T15:10:28.213Z\",\n                \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n            },\n            {\n                \"id\": \"acc_sync_23KLdh35DsdD83\",\n                \"acc_id\": \"acc_9H9atezg6g6Le\",\n                \"status\": \"in_progress\",\n                \"error\": null,\n                \"created_at\": \"2022-06-14T15:10:28.213Z\",\n                \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n            },\n            {\n                \"id\": \"acc_sync_AM2kj3238sr30ih\",\n                \"acc_id\": \"acc_LGheLaLYXdbb3\",\n                \"status\": \"in_progress\",\n                \"error\": null,\n                \"created_at\": \"2022-06-14T15:10:28.213Z\",\n                \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n            }\n        ]\n    },\n    \"message\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Sensitive",
+					"item": [
+						{
+							"name": "Retrieve Sensitive Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId/sensitive?",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										":accountId",
+										"sensitive"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/sensitive?fields[]=number",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"sensitive"
+											],
+											"query": [
+												{
+													"key": "fields[]",
+													"value": "number"
+												}
+											],
+											"variable": [
+												{
+													"key": "accountId",
+													"value": "{{account_id}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"number\": \"4455\"\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "404 id not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/:accountId/sensitive?fields[]=number",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"sensitive"
+											],
+											"query": [
+												{
+													"key": "fields[]",
+													"value": "number"
+												}
+											],
+											"variable": [
+												{
+													"key": "accountId",
+													"value": "{{account_id}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Retrieve Bulk Sensitive Accounts",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"acc_ids\": [\n        \"acc_XGyGwCKLdnJBQ\",\n        \"acc_9H9atezg6g6Le\",\n        \"acc_LGheLaLYXdbb3\",\n        \"acc_wetErwQ77FLrt\",\n        \"acc_Ja3Cfe8k77Qyk\",\n        \"acc_4NFJdxeFzM6xf\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/bulk_sensitive",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										"bulk_sensitive"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 partial failure",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"acc_ids\": [\n        \"acc_KMbbfzJdNt4mw\",\n        \"acc_J9MQKYQnJVycR\",\n        \"acc_UyHVbJrDUJnhX\"\n    ],\n    \"fields\": [\n        \"number\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/bulk_sensitive",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												"bulk_sensitive"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": [\n            \"acc_KMbbfzJdNt4mw\",\n            \"acc_J9MQKYQnJVycR\"\n        ],\n        \"failed\": [\n            \"acc_LGheLaLYXdbb3\",\n            \"acc_UyHVbJrDUJnhX\"\n        ],\n        \"results\": [\n            {\n                \"number\": \"4455\",\n                \"type\": \"unknown\",\n                \"id\": \"acc_KMbbfzJdNt4mw\"\n            },\n            {\n                \"number\": \"4455\",\n                \"type\": \"unknown\",\n                \"id\": \"acc_J9MQKYQnJVycR\"\n            }\n        ]\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"acc_ids\": [\n        \"acc_KMbbfzJdNt4mw\",\n        \"acc_J9MQKYQnJVycR\"\n    ],\n    \"fields\": [\n        \"number\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/bulk_sensitive",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												"bulk_sensitive"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": [\n            \"acc_KMbbfzJdNt4mw\",\n            \"acc_J9MQKYQnJVycR\"\n        ],\n        \"failed\": [],\n        \"results\": [\n            {\n                \"number\": \"fake_4455\",\n                \"type\": \"unknown\",\n                \"id\": \"acc_KMbbfzJdNt4mw\"\n            },\n            {\n                \"number\": \"fake_4455\",\n                \"type\": \"unknown\",\n                \"id\": \"acc_J9MQKYQnJVycR\"\n            }\n        ]\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "200 all fails",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"acc_ids\": [\n        \"acc_LGheLaLYXdbb3\",\n        \"acc_ChYmMArpYniGn\",\n        \"acc_UyHVbJrDUJnhX\"\n    ],\n    \"fields\": [\n        \"number\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/accounts/bulk_sensitive",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"accounts",
+												"bulk_sensitive"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": [],\n        \"failed\": [\n            \"acc_ChYmMArpYniGn\",\n            \"acc_LGheLaLYXdbb3\",\n            \"acc_UyHVbJrDUJnhX\"\n        ],\n        \"results\": []\n    },\n    \"message\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "Retrieve Account",
 					"request": {
 						"method": "GET",
@@ -1889,7 +2459,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"acc_d6yABh452M8fM\",\n        \"holder_id\": \"ent_hybiaAZaQUSZg\",\n        \"status\": \"active\",\n        \"type\": \"liability\",\n        \"ach\": null,\n        \"liability\": {\n            \"mch_id\": \"mch_2\",\n            \"mask\": \"4455\"\n        },\n        \"clearing\": null,\n        \"capabilities\": [\n            \"payments:receive\"\n        ],\n        \"error\": null,\n        \"metadata\": null,\n        \"created_at\": \"2022-04-01T19:10:50.399Z\",\n        \"updated_at\": \"2022-04-01T19:10:51.334Z\"\n    },\n    \"message\": null\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"acc_4NFJdxeFzM6xf\",\n        \"holder_id\": \"ent_bJRKHYGRLrT8g\",\n        \"status\": \"active\",\n        \"type\": \"liability\",\n        \"ach\": null,\n        \"liability\": {\n            \"mch_id\": \"mch_30\",\n            \"mask\": \"9544\",\n            \"type\": \"credit_card\",\n            \"data_status\": null,\n            \"data_last_successful_sync\": null,\n            \"credit_card\": {\n                \"name\": \"PayPal Credit\",\n                \"balance\": 1085667,\n                \"opened_at\": \"2016-11-25\",\n                \"last_payment_date\": null,\n                \"last_payment_amount\": null,\n                \"next_payment_due_date\": null,\n                \"next_payment_minimum_amount\": null,\n                \"last_statement_balance\": null,\n                \"remaining_statement_balance\": null,\n                \"available_credit\": null,\n                \"pending_purchase_authorization_amount\": null,\n                \"pending_credit_authorization_amount\": null,\n                \"interest_saving_balance\": null,\n                \"interest_rate_percentage\": null,\n                \"interest_rate_type\": null,\n                \"next_statement_date\": null\n            },\n            \"hash\": \"VekRAUESXz/6mcUcBFEOoJfzNWjYUwJPuP4go5qYK+Q=\"\n        },\n        \"clearing\": null,\n        \"capabilities\": [\n            \"payments:receive\",\n            \"data:retrieve\"\n        ],\n        \"available_capabilities\": [],\n        \"error\": null,\n        \"metadata\": null,\n        \"created_at\": \"2022-07-26T21:25:27.302Z\",\n        \"updated_at\": \"2022-07-26T21:25:27.526Z\"\n    },\n    \"message\": null\n}"
 						},
 						{
 							"name": "404 id not found",
@@ -2075,7 +2645,253 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"acc_d6yABh452M8fM\",\n            \"holder_id\": \"ent_hybiaAZaQUSZg\",\n            \"status\": \"active\",\n            \"type\": \"liability\",\n            \"ach\": null,\n            \"liability\": {\n                \"mch_id\": \"mch_2\",\n                \"mask\": \"4455\"\n            },\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\"\n            ],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-04-01T19:10:50.399Z\",\n            \"updated_at\": \"2022-04-01T19:10:51.334Z\"\n        },\n        {\n            \"id\": \"acc_z8Gt94JZY8EY5\",\n            \"holder_id\": \"ent_hybiaAZaQUSZg\",\n            \"status\": \"active\",\n            \"type\": \"ach\",\n            \"ach\": {\n                \"routing\": \"367537407\",\n                \"number\": \"57838927\",\n                \"type\": \"checking\"\n            },\n            \"liability\": null,\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"payments:send\"\n            ],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-04-01T19:07:19.196Z\",\n            \"updated_at\": \"2022-04-01T19:07:20.536Z\"\n        }\n    ],\n    \"message\": null\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"acc_4NFJdxeFzM6xf\",\n            \"holder_id\": \"ent_bJRKHYGRLrT8g\",\n            \"status\": \"active\",\n            \"type\": \"liability\",\n            \"ach\": null,\n            \"liability\": {\n                \"mch_id\": \"mch_30\",\n                \"mask\": \"9544\",\n                \"type\": \"credit_card\",\n                \"data_status\": null,\n                \"data_last_successful_sync\": null,\n                \"credit_card\": {\n                    \"name\": \"PayPal Credit\",\n                    \"balance\": 1085667,\n                    \"opened_at\": \"2016-11-25\",\n                    \"last_payment_date\": null,\n                    \"last_payment_amount\": null,\n                    \"next_payment_due_date\": null,\n                    \"next_payment_minimum_amount\": null,\n                    \"last_statement_balance\": null,\n                    \"remaining_statement_balance\": null,\n                    \"available_credit\": null,\n                    \"pending_purchase_authorization_amount\": null,\n                    \"pending_credit_authorization_amount\": null,\n                    \"interest_saving_balance\": null,\n                    \"interest_rate_percentage\": null,\n                    \"interest_rate_type\": null,\n                    \"next_statement_date\": null\n                },\n                \"hash\": \"VekRAUESXz/6mcUcBFEOoJfzNWjYUwJPuP4go5qYK+Q=\"\n            },\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"data:retrieve\"\n            ],\n            \"available_capabilities\": [],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-07-26T21:25:27.302Z\",\n            \"updated_at\": \"2022-07-26T21:25:27.526Z\"\n        },\n        {\n            \"id\": \"acc_Ja3Cfe8k77Qyk\",\n            \"holder_id\": \"ent_bJRKHYGRLrT8g\",\n            \"status\": \"active\",\n            \"type\": \"liability\",\n            \"ach\": null,\n            \"liability\": {\n                \"mch_id\": \"mch_183\",\n                \"mask\": \"1580\",\n                \"type\": \"credit_card\",\n                \"data_status\": null,\n                \"data_last_successful_sync\": null,\n                \"credit_card\": {\n                    \"name\": \"Chase Sapphire Reserve\",\n                    \"balance\": 550472,\n                    \"opened_at\": \"2016-11-25\",\n                    \"last_payment_date\": null,\n                    \"last_payment_amount\": null,\n                    \"next_payment_due_date\": null,\n                    \"next_payment_minimum_amount\": null,\n                    \"last_statement_balance\": null,\n                    \"remaining_statement_balance\": null,\n                    \"available_credit\": null,\n                    \"pending_purchase_authorization_amount\": null,\n                    \"pending_credit_authorization_amount\": null,\n                    \"interest_saving_balance\": null,\n                    \"interest_rate_percentage\": null,\n                    \"interest_rate_type\": null\n                },\n                \"hash\": \"sRsMsVzXnR9vQ9fA3juGej+NY4/j0UuCrJKIWD4ybh8=\"\n            },\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"data:retrieve\"\n            ],\n            \"available_capabilities\": [],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-07-26T21:25:27.295Z\",\n            \"updated_at\": \"2022-07-26T21:25:27.529Z\"\n        },\n        {\n            \"id\": \"acc_wetErwQ77FLrt\",\n            \"holder_id\": \"ent_bJRKHYGRLrT8g\",\n            \"status\": \"active\",\n            \"type\": \"liability\",\n            \"ach\": null,\n            \"liability\": {\n                \"mch_id\": \"mch_2347\",\n                \"mask\": \"4512\",\n                \"type\": \"auto_loan\",\n                \"data_status\": null,\n                \"data_last_successful_sync\": null,\n                \"auto_loan\": {\n                    \"name\": \"Volvo Cars Auto Loan\",\n                    \"sub_type\": null,\n                    \"balance\": 6083960,\n                    \"opened_at\": null,\n                    \"payoff_amount\": null,\n                    \"payoff_amount_term\": null,\n                    \"last_payment_amount\": null,\n                    \"last_payment_date\": null,\n                    \"next_payment_due_date\": null,\n                    \"next_payment_minimum_amount\": null,\n                    \"term_length\": null,\n                    \"interest_rate_percentage\": null,\n                    \"interest_rate_type\": null\n                },\n                \"hash\": \"KTaAorks1yfQ53SLQdCMAsvq2MEfc7vLt36hO2gxxCE=\"\n            },\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"data:retrieve\"\n            ],\n            \"available_capabilities\": [],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-07-26T21:25:27.293Z\",\n            \"updated_at\": \"2022-07-26T21:25:27.503Z\"\n        },\n        {\n            \"id\": \"acc_LGheLaLYXdbb3\",\n            \"holder_id\": \"ent_bJRKHYGRLrT8g\",\n            \"status\": \"active\",\n            \"type\": \"liability\",\n            \"ach\": null,\n            \"liability\": {\n                \"mch_id\": \"mch_23\",\n                \"mask\": \"8382\",\n                \"type\": \"credit_card\",\n                \"data_status\": null,\n                \"data_last_successful_sync\": null,\n                \"credit_card\": {\n                    \"name\": \"Barclaycard World Elite Mastercard Credit Card\",\n                    \"balance\": 121661,\n                    \"opened_at\": \"2021-06-29\",\n                    \"last_payment_date\": null,\n                    \"last_payment_amount\": null,\n                    \"next_payment_due_date\": null,\n                    \"next_payment_minimum_amount\": null,\n                    \"last_statement_balance\": null,\n                    \"remaining_statement_balance\": null,\n                    \"available_credit\": null,\n                    \"pending_purchase_authorization_amount\": null,\n                    \"pending_credit_authorization_amount\": null,\n                    \"interest_saving_balance\": null,\n                    \"interest_rate_percentage\": null,\n                    \"interest_rate_type\": null\n                },\n                \"hash\": \"cHT4JL+84djecevNpF71UL66tHhvwCrhC18jaHsaR7o=\"\n            },\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"data:retrieve\"\n            ],\n            \"available_capabilities\": [],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-07-26T21:25:27.291Z\",\n            \"updated_at\": \"2022-07-26T21:25:27.507Z\"\n        },\n        {\n            \"id\": \"acc_9H9atezg6g6Le\",\n            \"holder_id\": \"ent_bJRKHYGRLrT8g\",\n            \"status\": \"active\",\n            \"type\": \"liability\",\n            \"ach\": null,\n            \"liability\": {\n                \"mch_id\": \"mch_2\",\n                \"mask\": \"0004\",\n                \"type\": \"student_loan\",\n                \"data_status\": null,\n                \"data_last_successful_sync\": null,\n                \"student_loan\": {\n                    \"name\": \"FedLoan Student Loan\",\n                    \"sub_type\": null,\n                    \"sequence\": null,\n                    \"balance\": 1952634,\n                    \"last_payment_amount\": null,\n                    \"last_payment_date\": null,\n                    \"next_payment_due_date\": null,\n                    \"next_payment_minimum_amount\": null,\n                    \"disbursed_at\": \"2018-01-22\",\n                    \"interest_rate_percentage\": null,\n                    \"interest_rate_type\": null\n                },\n                \"hash\": \"vV0iXtKzh2hisytaynAssvI9fmSYyltl0gAcvn2CTzs=\"\n            },\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"data:retrieve\"\n            ],\n            \"available_capabilities\": [],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-07-26T21:25:27.288Z\",\n            \"updated_at\": \"2022-07-26T21:25:27.548Z\"\n        },\n        {\n            \"id\": \"acc_XGyGwCKLdnJBQ\",\n            \"holder_id\": \"ent_bJRKHYGRLrT8g\",\n            \"status\": \"active\",\n            \"type\": \"liability\",\n            \"ach\": null,\n            \"liability\": {\n                \"mch_id\": \"mch_183\",\n                \"mask\": \"4323\",\n                \"type\": \"mortgage\",\n                \"data_status\": null,\n                \"data_last_successful_sync\": null,\n                \"mortgage\": {\n                    \"name\": \"Chase Mortgage\",\n                    \"balance\": 8976762,\n                    \"opened_at\": null,\n                    \"term_length\": null,\n                    \"principal_balance\": null,\n                    \"original_loan_amount\": null,\n                    \"last_payment_amount\": null,\n                    \"last_payment_date\": null,\n                    \"next_payment_due_date\": null,\n                    \"next_payment_minimum_amount\": null,\n                    \"expected_payoff_date\": null,\n                    \"interest_rate_percentage\": null,\n                    \"interest_rate_type\": null\n                },\n                \"hash\": \"GbrALepY6UmZB9GWn2ih8aRB6NXzQWteUvlHTxp1YGI=\"\n            },\n            \"clearing\": null,\n            \"capabilities\": [\n                \"payments:receive\",\n                \"data:retrieve\"\n            ],\n            \"available_capabilities\": [],\n            \"error\": null,\n            \"metadata\": null,\n            \"created_at\": \"2022-07-26T21:25:27.283Z\",\n            \"updated_at\": \"2022-07-26T21:25:27.522Z\"\n        }\n    ],\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Payment History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/accounts/:accountId/payment_history",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"accounts",
+								":accountId",
+								"payment_history"
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "{{account_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId/payment_history",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										":accountId",
+										"payment_history"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"payment_history\": {\n                \"code\": 15002,\n                \"date\": \"2022-06-14T15:10:28.213Z\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId/payment_history",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										":accountId",
+										"payment_history"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mortgage\": {\n        \"address_street\": \"3300 N Interstate 35\",\n        \"address_city\": \"Austin\",\n        \"address_state\": \"TX\",\n        \"address_zip\": \"78705\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/accounts/:accountId",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"accounts",
+								":accountId"
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "{{account_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mortgage\": {\n        \"address_street\": \"3300 N Interstate 35\",\n        \"address_city\": \"Austin\",\n        \"address_state\": \"TX\",\n        \"address_zip\": \"78705\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										":accountId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": null,\n    \"message\": null\n}"
+						},
+						{
+							"name": "400 missing required parameter",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mortgage\": {\n        \"address_street\": \"3300 N Interstate 35\",\n        \"address_city\": \"Austin\",\n        \"address_state\": \"TX\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/accounts/:accountId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"accounts",
+										":accountId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"INVALID_REQUEST\",\n            \"message\": \"Field \\\"mortgage.address_zip\\\" is required. Verify your request and try again.\"\n        }\n    },\n    \"message\": \"Field \\\"mortgage.address_zip\\\" is required. Verify your request and try again.\"\n}"
 						}
 					]
 				}
@@ -2192,15 +3008,20 @@
 										"method": "POST",
 										"header": [
 											{
-												"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
 												"key": "Content-Type",
+												"name": "Content-Type",
 												"value": "application/json",
-												"type": "default"
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"type\": \"not_individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}"
+											"raw": "{\n    \"type\": \"not_individual\",\n    \"individual\": {\n        \"first_name\": \"Kevin\",\n        \"last_name\": \"Doyle\",\n        \"phone\": \"+16505555555\",\n        \"email\": \"kevin.doyle@gmail.com\",\n        \"dob\": \"1997-03-18\"\n    },\n    \"address\": {\n        \"line1\": \"3300 N Interstate 35\",\n        \"line2\": null,\n        \"city\": \"Austin\",\n        \"state\": \"Texas\",\n        \"zip\": \"78705\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
 										},
 										"url": {
 											"raw": "https://{{env}}.methodfi.com/entities",
@@ -3425,6 +4246,182 @@
 									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"INVALID_ENTITY_AUTH_QUESTIONS\",\n            \"message\": \"Invalid entity auth session questions. A question is either missing or invalid. Verify your request and try again\"\n        }\n    },\n    \"message\": \"Invalid entity auth session questions. A question is either missing or invalid. Verify your request and try again\"\n}"
 								}
 							]
+						},
+						{
+							"name": "Create Manual Auth Session",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"format\": \"equifax\",\n    \"bureau\": \"equifax\",\n    \"raw_report\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/entities/:id/manual_auth_session",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"entities",
+										":id",
+										"manual_auth_session"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{entity_id}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"format\": \"equifax\",\n    \"bureau\": \"equifax\",\n    \"raw_report\": null\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/entities/:id/manual_auth_session",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"entities",
+												":id",
+												"manual_auth_session"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{entity_id}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"authenticated\": true,\n        \"accounts\": [\n            \"acc_KMbbfzJdNt4mw\",\n            \"acc_J9MQKYQnJVycR\",\n            \"acc_9H9atezg6g6Le\",\n            \"acc_LGheLaLYXdbb3\",\n            \"acc_ChYmMArpYniGn\",\n            \"acc_UyHVbJrDUJnhX\"\n        ]\n    },\n    \"message\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Manual Auth Session",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"format\": \"equifax\",\n    \"bureau\": \"equifax\",\n    \"raw_report\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/entities/:id/manual_auth_session",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"entities",
+										":id",
+										"manual_auth_session"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{entity_id}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"format\": \"equifax\",\n    \"bureau\": \"equifax\",\n    \"raw_report\": null\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/entities/:id/manual_auth_session",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"entities",
+												":id",
+												"manual_auth_session"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{entity_id}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"authenticated\": true,\n        \"accounts\": [\n            \"acc_KMbbfzJdNt4mw\",\n            \"acc_J9MQKYQnJVycR\",\n            \"acc_9H9atezg6g6Le\",\n            \"acc_LGheLaLYXdbb3\",\n            \"acc_ChYmMArpYniGn\",\n            \"acc_UyHVbJrDUJnhX\"\n        ]\n    },\n    \"message\": null\n}"
+								}
+							]
 						}
 					]
 				},
@@ -4179,6 +5176,135 @@
 							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"ent_yqw7BZgtmHgdi\",\n        \"type\": \"individual\",\n        \"individual\": {\n            \"first_name\": \"Kevin\",\n            \"last_name\": \"Doyle\",\n            \"phone\": \"+15121231111\",\n            \"dob\": \"1997-03-18\",\n            \"email\": \"kevin.doyle@gmail.com\"\n        },\n        \"corporation\": null,\n        \"receive_only\": null,\n        \"capabilities\": [\n            \"payments:receive\",\n            \"payments:send\",\n            \"data:retrieve\"\n        ],\n        \"available_capabilities\": [],\n        \"pending_capabilities\": [],\n        \"error\": null,\n        \"address\": {\n            \"line1\": \"3300 N Interstate 35\",\n            \"line2\": null,\n            \"city\": \"Austin\",\n            \"state\": \"Texas\",\n            \"zip\": \"78705\"\n        },\n        \"status\": \"active\",\n        \"metadata\": null,\n        \"created_at\": \"2022-04-19T17:01:36.934Z\",\n        \"updated_at\": \"2022-04-19T17:10:40.272Z\"\n    },\n    \"message\": null\n}"
 						}
 					]
+				},
+				{
+					"name": "Retrieve Sensitive Fields",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/entities/:id/sensitive?",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"entities",
+								":id",
+								"sensitive"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{entity_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/entities/:id/sensitive?fields[]=first_name",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"entities",
+										":id",
+										"sensitive"
+									],
+									"query": [
+										{
+											"key": "fields[]",
+											"value": "first_name"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{entity_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"first_name\": \"Kevin\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "Retrieve Sensitive Fields",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/entities/:id/sensitive?fields[]=first_name",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"entities",
+										":id",
+										"sensitive"
+									],
+									"query": [
+										{
+											"key": "fields[]",
+											"value": "first_name"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{entity_id}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -4191,6 +5317,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -4204,7 +5333,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{env}}.methodfi.com/merchants/?limit=1",
+							"raw": "https://{{env}}.methodfi.com/merchants",
 							"protocol": "https",
 							"host": [
 								"{{env}}",
@@ -4212,14 +5341,7 @@
 								"com"
 							],
 							"path": [
-								"merchants",
-								""
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "1"
-								}
+								"merchants"
 							]
 						},
 						"description": "### Parameters\n\n| Name        | Type        | Required    | Description |\n| ----------- | ----------- | ----------- | ----------- |\n| `name`      | `string`    |       | Name of the merchant to find. |\n| `provider_id.plaid`      | `string`    |       | Plaid id for the merchant to find. |\n| `provider_id.mx`      | `string`    |       | MX id for the merchant to find. |\n| `provider_id.finicity`      | `string`    |       | Finicity id for the merchant to find. |"
@@ -4456,6 +5578,115 @@
 			"name": "Payments",
 			"item": [
 				{
+					"name": "Reversals",
+					"item": [
+						{
+							"name": "Retrieve Reversal",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments/:paymentId/reversals/:reversalId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments",
+										":paymentId",
+										"reversals",
+										":reversalId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "{{payment_id}}"
+										},
+										{
+											"key": "reversalId",
+											"value": "{{reversal_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Reversals",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments/:paymentId/reversals",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments",
+										":paymentId",
+										"reversals"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "{{payment_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Reversal",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"pending\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/payments/:paymentId/reversals/:reversalId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"payments",
+										":paymentId",
+										"reversals",
+										":reversalId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "{{payment_id}}"
+										},
+										{
+											"key": "reversalId",
+											"value": "{{reversal_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Create Payment",
 					"request": {
 						"method": "POST",
@@ -4482,7 +5713,7 @@
 								"payments"
 							]
 						},
-						"description": "### Parameters\n\n| Name        | Type        | Required    | Description |\n| ----------- | ----------- | ----------- | ----------- |\n| `amount`      | `integer`    |   true    | The amount of the payment to be created in cents. (e.g. $1.00 = 100)|\n| `source`      | `string`    |   true    | The `id` of an `ach` account from which the payment amount will be retrieved. |\n| `destination`      | `string`    |   true    | The  `id`  of an  `ach`  or  `liability`  account to which the payment amount will be sent. |\n| `description`      | `string`    |       | Optional description (maximum of 10 characters). |"
+						"description": "### Parameters\n\n| Name | Type | Required | Description |\n| --- | --- | --- | --- |\n| `amount` | `integer` | true | The amount of the payment to be created in cents. (e.g. $1.00 = 100) |\n| `source` | `string` | true | The `id` of an `ach` account from which the payment amount will be retrieved. |\n| `destination` | `string` | true | The `id` of an `ach` or `liability` account to which the payment amount will be sent. |\n| `description` | `string` |  | Optional description (maximum of 10 characters). |"
 					},
 					"response": [
 						{
@@ -6140,6 +7371,1373 @@
 								{
 									"key": "Keep-Alive",
 									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"status\": 404,\n            \"code\": 404,\n            \"type\": \"INVALID_REQUEST\",\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\",\n            \"presentable\": true,\n            \"source\": null,\n            \"name\": \"NotFoundError\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Connections",
+			"item": [
+				{
+					"name": "List Connections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/connections",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"connections"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/connections",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"connections"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 04 May 2022 18:14:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "70633769ef979c8e-IAD"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"93ad-FAgGOosVxUxxmKtbFXUg9Zot3zY\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Idem-Request-Id",
+									"value": "adt_Et3eTWkH3QGYY"
+								},
+								{
+									"key": "Idem-Status",
+									"value": "bypassed"
+								},
+								{
+									"key": "Idem-Version",
+									"value": "dev.22f7868"
+								},
+								{
+									"key": "request-id",
+									"value": "adt_Et3eTWkH3QGYY"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=71wgQZ2cxGn9WKm6yT4GV5NEAREABRYA6PO%2BkfGTlPsYYc5WJyZ31AXM7D%2BMLpdWeaZqKQInaMu5LAnNhZ2%2BiHETmwC1oqqIVwvco8DPw5CYFr09a8VZtukaqp15yHnCEX4%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"cxn_3PFedecdjwEys\",\n            \"entity_id\": \"ent_Ke2QxrA43GVn6\",\n            \"accounts\": [\n                \"acc_hjHNbUAdehqhK\",\n                \"acc_c3ckPHsATUExW\",\n                \"acc_izgTfdjYw7Hk4\",\n                \"acc_wrmkE6wawFDJB\",\n                \"acc_Y8cpKzpzTqdVM\",\n                \"acc_THJzMh9M8T3MW\",\n                \"acc_LA4HVjETQ7Lai\",\n                \"acc_MYKYHVyNNYtbU\",\n                \"acc_pHsnb2a656aS3\",\n                \"acc_9XJUYNe2QPpkw\",\n                \"acc_CsHCk7XpA3V3a\",\n                \"acc_PDCzNNEkVmpn3\",\n                \"acc_HCNFSQbTxgAFU\",\n                \"acc_3Tsa5PZemrtXG\",\n                \"acc_LkYwTznrE6fmM\",\n                \"acc_pSsJ8UccPMgnj\",\n                \"acc_xcaTWjyj3fDhq\",\n                \"acc_RaX2GYD8XWYQi\",\n                \"acc_sgM462daaULne\",\n                \"acc_2Fjy5kMgnnaQX\",\n                \"acc_47pnyUHcx5mfd\",\n                \"acc_xUpCYwHh54sjF\",\n                \"acc_7qqfzZCgYDmhR\",\n                \"acc_AP32DgCnqr57s\",\n                \"acc_wNsWjSk9xVTAt\",\n                \"acc_3xQwYJnGFpzQd\",\n                \"acc_MErKBCewycmXg\",\n                \"acc_dsP2eqBYTf3XA\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T00:04:08.731Z\",\n            \"updated_at\": \"2022-04-28T07:04:10.677Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:10.677Z\"\n        },\n        {\n            \"id\": \"cxn_3jGB67C4eHzGQ\",\n            \"entity_id\": \"ent_qBcrknkbai7kA\",\n            \"accounts\": [\n                \"acc_MeUrN9B3DqfdF\",\n                \"acc_3eTFrQUVDjM8n\",\n                \"acc_GFqaj6eqrdmzL\",\n                \"acc_nJkVpVWzALUXr\",\n                \"acc_PP8cA9bajEz78\",\n                \"acc_9NpxJjerRaCaf\",\n                \"acc_NBqMia9fiYXLT\",\n                \"acc_XF8tMEwrw8TXC\",\n                \"acc_wWE4C4maeTaVK\",\n                \"acc_KNHKAwekpeXWL\",\n                \"acc_fwVQADpj4QTMn\",\n                \"acc_RjfC8xkEQ3qHk\",\n                \"acc_CkbHk3Lw7C7hD\",\n                \"acc_gzqJdiXwTbhVG\",\n                \"acc_D3jbDFxLnaEiV\",\n                \"acc_KRAHfDqLNM3cY\",\n                \"acc_NmW6pne3Gn9tw\",\n                \"acc_GYgLM79YfjV3V\",\n                \"acc_43UHMGXUFxBwf\",\n                \"acc_fVfEAh6E8ymfG\",\n                \"acc_XRNfHmLwy9mL8\",\n                \"acc_PfxVqQVajythK\",\n                \"acc_ifw46fnXCpMBn\",\n                \"acc_x9Vfbn6ycV4rw\",\n                \"acc_aYDa6ih7dWizJ\",\n                \"acc_VBRyXXkwtN4x8\",\n                \"acc_PEGdFzmn6miba\",\n                \"acc_NH9eWHBLCHexN\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T16:10:38.588Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.233Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.233Z\"\n        },\n        {\n            \"id\": \"cxn_4wiKCK6niwTHm\",\n            \"entity_id\": \"ent_UYg466XHddRiD\",\n            \"accounts\": [\n                \"acc_qLTPcWcCwHh3t\",\n                \"acc_e6rJEU8P4X7ri\",\n                \"acc_x6W6eBnGx984j\",\n                \"acc_9xUNUx7UHEQRR\",\n                \"acc_UdUV8njQm9gdU\",\n                \"acc_84tgKBkPPGbfF\",\n                \"acc_cXmmENCd3MXwA\",\n                \"acc_hjQk7wJzL9z34\",\n                \"acc_4iQgf7MRqnEHC\",\n                \"acc_fp6GkgMEyitiR\",\n                \"acc_QDgzzxgbEfFTf\",\n                \"acc_KYLdXUXENpPQp\",\n                \"acc_wdHYUPiHNKtee\",\n                \"acc_QDy7BD6QL9AFe\",\n                \"acc_dftF9mJiLLFUm\",\n                \"acc_zprRFb6Wn6XJQ\",\n                \"acc_EibxxHWfA3adw\",\n                \"acc_wUenxWehLTnxB\",\n                \"acc_7TXz636yCfQda\",\n                \"acc_rfayddw99AxaJ\",\n                \"acc_CR98V4Nh9wiPE\",\n                \"acc_kXbAKA79d3cQJ\",\n                \"acc_ryJgT87GnqJac\",\n                \"acc_KfY6jVeP4KzkU\",\n                \"acc_DB3QkFh3cV9Dz\",\n                \"acc_ekjegPW8PhTYt\",\n                \"acc_qd6zkXDtTHKpr\",\n                \"acc_dXqgBCcwNKmAG\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T23:28:40.915Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.413Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.412Z\"\n        },\n        {\n            \"id\": \"cxn_6jBhN4N6qRaQH\",\n            \"entity_id\": \"ent_RE7cXpaMB7hFN\",\n            \"accounts\": [\n                \"acc_Lrjjwh86Q88Kq\",\n                \"acc_rfBVdYWYrKrVJ\",\n                \"acc_RwQq3xnC8jN3G\",\n                \"acc_8E3KeQ3P9mbjt\",\n                \"acc_8htW9YXNw99h6\",\n                \"acc_nzMftm9YxiUCH\",\n                \"acc_aYTJX7aPxPME4\",\n                \"acc_irihizAqJDqfT\",\n                \"acc_VV6gYwBcXKw9G\",\n                \"acc_VHr488QwitP7e\",\n                \"acc_nKzDWf76PTUYk\",\n                \"acc_UHGXeHdtdzXq8\",\n                \"acc_aGmwgw37VxLNP\",\n                \"acc_Acm8XAwt6TXhY\",\n                \"acc_nVJbEPAnJPCUw\",\n                \"acc_j6y4tDmheWLtq\",\n                \"acc_HXVa7cDJbhGFU\",\n                \"acc_Xwwnqm7PRgAGz\",\n                \"acc_39GgEjHx38dkH\",\n                \"acc_iKgKecKVd8KYL\",\n                \"acc_kHFqB86VwQJxX\",\n                \"acc_XPDkzAbDH9TLx\",\n                \"acc_RiR6VQ3DyWCnD\",\n                \"acc_THB9qQFUxjEMi\",\n                \"acc_tfzDM7AHTUbPg\",\n                \"acc_3MHymRHRUpxjj\",\n                \"acc_8Hwane7rMxw4F\",\n                \"acc_RBqJCHKEPJaER\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-05-02T13:43:14.231Z\",\n            \"updated_at\": \"2022-05-02T13:43:29.110Z\",\n            \"last_synced_at\": \"2022-05-02T13:43:29.109Z\"\n        },\n        {\n            \"id\": \"cxn_95WnwJBpRiEGR\",\n            \"entity_id\": \"ent_6kChpTz3EN3qk\",\n            \"accounts\": [],\n            \"source\": \"plaid\",\n            \"status\": \"failed\",\n            \"error\": null,\n            \"created_at\": \"2022-04-04T12:29:27.509Z\",\n            \"updated_at\": \"2022-04-04T12:29:50.869Z\",\n            \"last_synced_at\": \"1970-01-01T00:00:00.000Z\"\n        },\n        {\n            \"id\": \"cxn_AiBGqmzAHPzUG\",\n            \"entity_id\": \"ent_aGBUeVA4EwMfV\",\n            \"accounts\": [\n                \"acc_dMdeVymDXaY6i\",\n                \"acc_bL7jFHqiQXgbi\",\n                \"acc_KphdfCKPyD4qD\",\n                \"acc_TqhcCBi4Q7Pm4\",\n                \"acc_KM78Ndqtyh9wh\",\n                \"acc_87FXXzBaNEbVd\",\n                \"acc_C4zbHnFY8Dxi7\",\n                \"acc_gpzzX7w7BGqMn\",\n                \"acc_9748XiwEA6Y3Y\",\n                \"acc_eEKmDxMmqjMgM\",\n                \"acc_y8CjkCt9NRz7d\",\n                \"acc_mmYwzMhDeDtiM\",\n                \"acc_zpCREBwPnrwLj\",\n                \"acc_BmbjmLA3Jxf6R\",\n                \"acc_treNADGtXhjWf\",\n                \"acc_iWEfqC9gpDKcM\",\n                \"acc_fCgw9Ra67LRjK\",\n                \"acc_c69E3B8xLnWDL\",\n                \"acc_EMqPME9mWexhc\",\n                \"acc_TVfz4deMgYKVV\",\n                \"acc_yCkDEgFDy9Q6T\",\n                \"acc_EVh6jBPQDK8ac\",\n                \"acc_KgkHarjLecnQ8\",\n                \"acc_TKkU4ddq8QcXQ\",\n                \"acc_AKhn3JWahd7tL\",\n                \"acc_Xaq9DVEH6bHNF\",\n                \"acc_t8MRG4Yt8bMhN\",\n                \"acc_FEeyqCFB8WXRG\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T17:34:59.362Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.040Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.040Z\"\n        },\n        {\n            \"id\": \"cxn_BiztKEAbzQAjy\",\n            \"entity_id\": \"ent_nJAa7McUhXgVT\",\n            \"accounts\": [\n                \"acc_yUJ7LmUj7krTL\",\n                \"acc_XAWkAiUxedNtX\",\n                \"acc_WbBmKNApJJ9zz\",\n                \"acc_yLXw4CPWEXVN6\",\n                \"acc_bCcEtdzaMrDLe\",\n                \"acc_L73G7iMbHWdtn\",\n                \"acc_Wxk4VtDUBHtdV\",\n                \"acc_EmGQR8FgGrFUL\",\n                \"acc_xeJQcwUtFXRDR\",\n                \"acc_wqyUhjGDB6h7B\",\n                \"acc_QqMdcy3nFnKny\",\n                \"acc_9hXxX93bekMDN\",\n                \"acc_nitEMYFq98WBM\",\n                \"acc_Nni3FaXcGFi3c\",\n                \"acc_WYKPiAB6tKRn6\",\n                \"acc_yD7mjiUmbjQBq\",\n                \"acc_if6U9BC8K3bYg\",\n                \"acc_7aPNTzppRjyb6\",\n                \"acc_cQYNGnajzbQ3F\",\n                \"acc_CQVYFBtdaDkae\",\n                \"acc_xPdp83UnXGH3n\",\n                \"acc_ie9CTdVhmgFf8\",\n                \"acc_LaUB7KpCga8xj\",\n                \"acc_F6waYCcGL8YaB\",\n                \"acc_JcYHdQPAmycfG\",\n                \"acc_C9fqQh4B36yzh\",\n                \"acc_J96xcXHrpd84r\",\n                \"acc_4Fx9gRwwNCDC4\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-28T15:44:14.762Z\",\n            \"updated_at\": \"2022-04-28T15:44:45.193Z\",\n            \"last_synced_at\": \"2022-04-28T15:44:45.192Z\"\n        },\n        {\n            \"id\": \"cxn_CnNkr3ReWwwpc\",\n            \"entity_id\": \"ent_j7C4WKBBkjVrb\",\n            \"accounts\": [\n                \"acc_bB4mxpfqRrjfi\",\n                \"acc_g8PLzAiktGnDk\",\n                \"acc_eMQ97xV8ziWcx\",\n                \"acc_xCVjdKDY8bBxp\",\n                \"acc_rdEkYRxeRF7DP\",\n                \"acc_Gyhd8zcGH6rHk\",\n                \"acc_EBPz3rAfgLNF8\",\n                \"acc_iMeM4yYg8QayY\",\n                \"acc_JhrKc3WAUKmiA\",\n                \"acc_4FghFN8WWGxTN\",\n                \"acc_xAhxTRUzEqcUy\",\n                \"acc_3LJUF9nEWxzrq\",\n                \"acc_rYWJNe9rR4dPa\",\n                \"acc_wd7mLyUwbfXBM\",\n                \"acc_gDBpc8eFikjNE\",\n                \"acc_T689hgCNgVmCp\",\n                \"acc_H4PixwQKRMbPP\",\n                \"acc_Br6BwCHaxARVV\",\n                \"acc_iiYhUiLjMmxtJ\",\n                \"acc_DBGCLc6arYrcj\",\n                \"acc_PDXjhiaRr3XNV\",\n                \"acc_nKDWmGDraewQA\",\n                \"acc_8nfRjNWUYA6eA\",\n                \"acc_qAk8pN6ieWEae\",\n                \"acc_kP4arVtrMi4pe\",\n                \"acc_hBAkiADAR8MNi\",\n                \"acc_qEwFPVzdaBRfj\",\n                \"acc_ar6QYThJgFBiW\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T18:42:06.213Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.115Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.114Z\"\n        },\n        {\n            \"id\": \"cxn_DaNaBykjYcpxn\",\n            \"entity_id\": \"ent_yAcJL7qx7jXU6\",\n            \"accounts\": [\n                \"acc_7yPFGAtVY4cGH\",\n                \"acc_hUEprDCyDjBpF\",\n                \"acc_kYGNYyAWd3Rgi\",\n                \"acc_xaRNDLCfgTw47\",\n                \"acc_BwejAzX4tHjhV\",\n                \"acc_kFp4XfT8JtF87\",\n                \"acc_Di7McPrr7eRgT\",\n                \"acc_U4AWitPA8GiDz\",\n                \"acc_KzCbE9ip6xUyg\",\n                \"acc_7aRVJrbkwLUAe\",\n                \"acc_m4nReKHGCrPPY\",\n                \"acc_kBgnrFyJi9BzQ\",\n                \"acc_TkmydxAX3AENR\",\n                \"acc_6nEHD4NXVxWQN\",\n                \"acc_86BFkbWj3nBRa\",\n                \"acc_bcti6MbGKiUkD\",\n                \"acc_yKLNFQN6NcDQq\",\n                \"acc_YTiNCgeBdmJWW\",\n                \"acc_a7nzAzqJJGUhK\",\n                \"acc_hzTYkDE7qyTJQ\",\n                \"acc_fCQLhjAdi7Pzz\",\n                \"acc_d6PhJpdmLEKVR\",\n                \"acc_8VeD7cFfAD7Hr\",\n                \"acc_tUMGXj8KqBX3V\",\n                \"acc_6kkzLRkcJxdw7\",\n                \"acc_GWxaTXKhqgyUb\",\n                \"acc_6V4RTa9h3ntc9\",\n                \"acc_d9wmzjEX87prh\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-28T21:52:12.721Z\",\n            \"updated_at\": \"2022-04-28T21:52:26.811Z\",\n            \"last_synced_at\": \"2022-04-28T21:52:26.810Z\"\n        },\n        {\n            \"id\": \"cxn_FCQMXfz8Rbwny\",\n            \"entity_id\": \"ent_UgkydDVDMXyEh\",\n            \"accounts\": [\n                \"acc_APKUgYC3MKepJ\",\n                \"acc_h7XYCJMGKXpaQ\",\n                \"acc_yKMUAb8DyGif3\",\n                \"acc_D66MenGybjtRm\",\n                \"acc_gmcx7bEVfzCzz\",\n                \"acc_jxaY8ntfaEr47\",\n                \"acc_tiAVVK3wy4Vfw\",\n                \"acc_VtKrCAf6gMkEg\",\n                \"acc_BYa3b8x9JEJKU\",\n                \"acc_QRRxdzXjnyQcD\",\n                \"acc_KHKLHRpnQTGLL\",\n                \"acc_hT48e67UVqTmr\",\n                \"acc_F6RU4kTFA3pAB\",\n                \"acc_DMUaek94Q3UJK\",\n                \"acc_G6tQUhrV6bLhA\",\n                \"acc_m8DQhkEb3Kqnh\",\n                \"acc_aKUMRnzFLYdqi\",\n                \"acc_RKJ6tdyRAeWCB\",\n                \"acc_3EcR6RdM7RNt6\",\n                \"acc_FxWTVBNRMzPCA\",\n                \"acc_mWQCrRRVEdTMP\",\n                \"acc_LU6FUGjWrptiH\",\n                \"acc_DmVTf3difCWxa\",\n                \"acc_W7hAiQDMnpTXP\",\n                \"acc_jYMGNJQBxLbFY\",\n                \"acc_XLbrU4zhN8cgW\",\n                \"acc_bpG7wXerjwQG8\",\n                \"acc_AzgBjLy7irxNL\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-26T15:07:08.272Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.221Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.220Z\"\n        },\n        {\n            \"id\": \"cxn_G3H35PzPSZBJL\",\n            \"entity_id\": \"ent_xsNaqUCDrxkyz\",\n            \"accounts\": [\n                \"acc_yTbWyqRPmGJAM\",\n                \"acc_AH37Z2ZLjKH7w\",\n                \"acc_6VAahbQWGw6GM\",\n                \"acc_3b9Z6UH2RJWDa\",\n                \"acc_BFR5ipesGXm3C\",\n                \"acc_gCWRf2QfXKBet\",\n                \"acc_TVL2789qm9ZBD\",\n                \"acc_7ak2p5HJGzLZk\",\n                \"acc_xNy2saEp6h4Lg\",\n                \"acc_g4K6yjbiZqq6b\",\n                \"acc_bB39EqQqKGr9n\",\n                \"acc_pGr4ASpGtLK3N\",\n                \"acc_GN2drgHKzXWX3\",\n                \"acc_xzZw8p5R9Mzd4\",\n                \"acc_5if6wXnaTT4Jr\",\n                \"acc_ck3kjB6Hkq4aF\",\n                \"acc_Hf49Jsb4m6NyE\",\n                \"acc_HNbQtQYxqyLix\",\n                \"acc_tGpPUY9xynjUK\",\n                \"acc_zANBhrNw9tq83\",\n                \"acc_btmcxAZAs9JCn\",\n                \"acc_rSKmBBDhPZW4x\",\n                \"acc_5bmfe5WgmsDtj\",\n                \"acc_RLFTih8tm5spZ\",\n                \"acc_RQ9EnycecAhWH\",\n                \"acc_5px3VgsSZiqpb\",\n                \"acc_eixaeJk5c6ZHL\",\n                \"acc_aNLe9f8GSPzyM\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T00:07:18.532Z\",\n            \"updated_at\": \"2022-04-28T07:04:11.583Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:11.582Z\"\n        },\n        {\n            \"id\": \"cxn_GZzzPfP53SXTG\",\n            \"entity_id\": \"ent_y9GSaFPK8RseB\",\n            \"accounts\": [\n                \"acc_TwwK2KZECwDE9\"\n            ],\n            \"source\": \"plaid\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-03-10T22:30:29.487Z\",\n            \"updated_at\": \"2022-03-10T22:30:43.130Z\",\n            \"last_synced_at\": \"2022-03-10T22:30:42.413Z\"\n        },\n        {\n            \"id\": \"cxn_GdUHVPhPMdd8h\",\n            \"entity_id\": \"ent_QKf4MiDQMFCUq\",\n            \"accounts\": [\n                \"acc_z4W4ndjKWb9Fg\",\n                \"acc_tCH8GPVywHUqY\",\n                \"acc_NDg8cECXY8rNx\",\n                \"acc_tWM7TfBHmWMXG\",\n                \"acc_kP6QLYtY9DGHf\",\n                \"acc_FnncAjQnrmAdN\",\n                \"acc_FNwFUbPXNgYz6\",\n                \"acc_RBgzBMwFqTJ9q\",\n                \"acc_AgUe3pNywUnnG\",\n                \"acc_jhcpAd9dTp8GB\",\n                \"acc_DANKjCYGXrWdY\",\n                \"acc_hE8wwgJRjPCaJ\",\n                \"acc_CnFywfrchyjQK\",\n                \"acc_r6tcaa8PixWyE\",\n                \"acc_XWqBPzYGFFi66\",\n                \"acc_xUbTeteJkQ4cY\",\n                \"acc_JtdWRythVepVn\",\n                \"acc_HAHgkqtCYcPqr\",\n                \"acc_CKyLz6bDzAgWB\",\n                \"acc_nqGCfCFY6JF3m\",\n                \"acc_LBHKBamUcyBmi\",\n                \"acc_dpDr9icpgwF76\",\n                \"acc_EYjLXnePVhAT7\",\n                \"acc_BNriXkeeXdKC3\",\n                \"acc_MREYbqbanWnRr\",\n                \"acc_fLMG7eDbN9Q4z\",\n                \"acc_pwWFjVd4mdJ4G\",\n                \"acc_h9tR8QUMb9X7q\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T17:14:03.543Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.320Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.320Z\"\n        },\n        {\n            \"id\": \"cxn_H69e4JH7dqJ3h\",\n            \"entity_id\": \"ent_tjqEDfg9X6HVq\",\n            \"accounts\": [\n                \"acc_bxAe7wDVtXEPx\",\n                \"acc_Y3BitgqLaeWf6\",\n                \"acc_K9tkgYGTQ3UGR\",\n                \"acc_BW6zNpG7pATx6\",\n                \"acc_UVjV3D4VM6YGW\",\n                \"acc_AVRFVzreBk8p8\",\n                \"acc_P3DprDX7Lnf9Q\",\n                \"acc_YQYR984whXWYr\",\n                \"acc_G37HFxKeGrrWL\",\n                \"acc_Hpz6nLPyqP8VD\",\n                \"acc_fz3AGNcCHBybF\",\n                \"acc_fdc8ftmBUXnd7\",\n                \"acc_QxqUKdBcFKAaH\",\n                \"acc_aE9Ew43Tw7g4L\",\n                \"acc_96eJCmT84iBXN\",\n                \"acc_Xe9yhpgmWA8QQ\",\n                \"acc_a9HeCnYmmXtVJ\",\n                \"acc_zURzpCm6DGWQQ\",\n                \"acc_bNEtBmK3UearB\",\n                \"acc_XtnPk6jNqQtAX\",\n                \"acc_NHJnAf7wBhanQ\",\n                \"acc_jAJrhAUwdXbDV\",\n                \"acc_DMxBhQ6nAdjnj\",\n                \"acc_gLtKdbM3wytAE\",\n                \"acc_4DJGhmAxqAgaj\",\n                \"acc_GzQJ7Qk7bX6bA\",\n                \"acc_fA8gEE8xRf6fM\",\n                \"acc_jTEwHyfmnixxg\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T17:28:48.663Z\",\n            \"updated_at\": \"2022-04-28T07:04:12.915Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:12.914Z\"\n        },\n        {\n            \"id\": \"cxn_Hxm7FYqyXzNSw\",\n            \"entity_id\": \"ent_Nk83MKeUBeAXR\",\n            \"accounts\": [\n                \"acc_wqKjEPUnF5reU\",\n                \"acc_GM6T8gdnTTwwn\",\n                \"acc_HBrqCPaLMLMPw\",\n                \"acc_FWrkej7p3BDjP\",\n                \"acc_qj7w6wnsSAfjR\",\n                \"acc_ZaVETp2W9nSRU\",\n                \"acc_8dSqxCFgMmgc5\",\n                \"acc_BSiWXZYmLn687\",\n                \"acc_fhDmhypchSQA4\",\n                \"acc_rAKfhjixyTsKJ\",\n                \"acc_YB34wbejXkp5w\",\n                \"acc_rcUmaSJUFKTX2\",\n                \"acc_Bt2mUZqTHpbdT\",\n                \"acc_JR2tVGFGKSyeh\",\n                \"acc_ZcBPSCJWrWEYV\",\n                \"acc_9ebUx8Ft6w8sM\",\n                \"acc_dNsmdhiAY9DLs\",\n                \"acc_rVz36cTMMfpih\",\n                \"acc_eKcHxPQnSLgeR\",\n                \"acc_ePGgRNrdamHFf\",\n                \"acc_wpiDgFfwnp5WS\",\n                \"acc_L75jWksHiBtgN\",\n                \"acc_jYChKJQhU45Hq\",\n                \"acc_nVJKpQeCmVTzJ\",\n                \"acc_Cd7E8wSqQR4Ag\",\n                \"acc_SCerEdWkYZqp6\",\n                \"acc_XKHDssWmNMhrp\",\n                \"acc_ac7DR6tXpFkEm\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T17:57:57.729Z\",\n            \"updated_at\": \"2022-04-28T07:04:11.783Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:11.782Z\"\n        },\n        {\n            \"id\": \"cxn_JVLW6ketYFLCh\",\n            \"entity_id\": \"ent_HkXRaAjbrgEmx\",\n            \"accounts\": [\n                \"acc_tJgNkpr6HLaUH\",\n                \"acc_kFiBaKhrpfCWf\",\n                \"acc_NyDEgyFPAdjL9\",\n                \"acc_iFcrr4xXd9w9R\",\n                \"acc_tyqM8EmNcAAMR\",\n                \"acc_TPeHKxCEtNaca\",\n                \"acc_977mTxrKwt6gj\",\n                \"acc_rYditXAUpYPLP\",\n                \"acc_3AxEhVjtKBYkb\",\n                \"acc_Xrjng9gBiixk3\",\n                \"acc_jQXqhD6WRCn7r\",\n                \"acc_UFPjcRN6HnxHB\",\n                \"acc_3CNEdBMxgiChh\",\n                \"acc_HU8APHUCTVpiB\",\n                \"acc_PRKPqTzNHNRam\",\n                \"acc_zcANnUH9TtnzE\",\n                \"acc_bLVdTfj48dHQf\",\n                \"acc_d3xbiAWyPqbdb\",\n                \"acc_i6BfjRf7BBLhz\",\n                \"acc_pQErQTd9Kqqpk\",\n                \"acc_Jxdxt6NP8me9n\",\n                \"acc_PA6AgXrmjEeYP\",\n                \"acc_aadXBPEmzyCKT\",\n                \"acc_eUffc9KVqGRcp\",\n                \"acc_XcdaPMjndU74m\",\n                \"acc_nYK3qmjJcTVkD\",\n                \"acc_RzetLkBX3tbUY\",\n                \"acc_9pPKAj3bncYeE\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T19:01:18.552Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.058Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.057Z\"\n        },\n        {\n            \"id\": \"cxn_JWXMQAVwtRfiB\",\n            \"entity_id\": \"ent_2dMPhFwVpwjgf\",\n            \"accounts\": [\n                \"acc_dyY9Aj7zcwapa\"\n            ],\n            \"source\": \"plaid\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-03T14:45:12.522Z\",\n            \"updated_at\": \"2022-04-03T14:45:28.220Z\",\n            \"last_synced_at\": \"2022-04-03T14:45:27.232Z\"\n        },\n        {\n            \"id\": \"cxn_K4Upc4MrSTbQq\",\n            \"entity_id\": \"ent_h6NNBh25Sej8j\",\n            \"accounts\": [\n                \"acc_c6D3yUxEdzKcP\",\n                \"acc_sVApW4BfWVEUy\",\n                \"acc_sZbN46tgEgFyt\",\n                \"acc_yNddQzKZe5Exk\",\n                \"acc_jNEVLdxzdLnzU\",\n                \"acc_tmrTec2GrL6gH\",\n                \"acc_JX54zENWRasSr\",\n                \"acc_jtwFzGScFkXdp\",\n                \"acc_7jSahXSmRmeNk\",\n                \"acc_fg6C8kDpa5qRk\",\n                \"acc_8qSqFiymCTsdR\",\n                \"acc_f3z5PJwHxqLeA\",\n                \"acc_rzb7Y2MP42bYy\",\n                \"acc_DLL5MWczRZpQX\",\n                \"acc_f5AsCgGtN4h8s\",\n                \"acc_dKYCKGc3RPnpH\",\n                \"acc_FjbWLRn46C8y3\",\n                \"acc_TMWzX5kzMhXKJ\",\n                \"acc_kGQ8fpFUJLttk\",\n                \"acc_wchAyMNWM66w7\",\n                \"acc_w3NgYciRj4rb2\",\n                \"acc_3QZBVSpSdhmm3\",\n                \"acc_XdznNkmTQGgNi\",\n                \"acc_UDj7DbAhib9zj\",\n                \"acc_qi5zP2gKbfbnA\",\n                \"acc_HtmB8GFGS7jQd\",\n                \"acc_Yqe43xyTHMHJ7\",\n                \"acc_HgARyjBVkmEGk\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T00:22:09.745Z\",\n            \"updated_at\": \"2022-04-28T07:04:11.023Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:11.023Z\"\n        },\n        {\n            \"id\": \"cxn_K86Mbb3fFVxUL\",\n            \"entity_id\": \"ent_MtbyiRj9TEBLQ\",\n            \"accounts\": [\n                \"acc_GWejhHcgKHTcG\",\n                \"acc_fHBfQ4xLLAzdq\",\n                \"acc_nj4bwGdaFfpYE\",\n                \"acc_ptTcVjhNmLidq\",\n                \"acc_Nt9EBjHacmkJP\",\n                \"acc_gYeALKQqyk3M8\",\n                \"acc_4agRaRcp877xH\",\n                \"acc_yrWEaUkhzyNwQ\",\n                \"acc_BxDJ7U7nrcBrP\",\n                \"acc_hJW9QgEawDMA9\",\n                \"acc_xd9jnPJF4x4fL\",\n                \"acc_ntNLBmMaDQQq4\",\n                \"acc_kRFUTt74f9JbV\",\n                \"acc_ecdMC7BxWb4ji\",\n                \"acc_XrUHK4k8fKdPm\",\n                \"acc_ab8b9N4XYDKdJ\",\n                \"acc_7CfVLJ4qcVdxD\",\n                \"acc_Y6fRBbaCY4DVR\",\n                \"acc_PyMV4xpCkDrWP\",\n                \"acc_hnxhpdkEqHXFn\",\n                \"acc_XXhLPtXacA77Y\",\n                \"acc_Yz96dH8HAtVnA\",\n                \"acc_rnnyUeyjzHCdi\",\n                \"acc_tPnDQzCNhiBVU\",\n                \"acc_9z8ifddC4Hghd\",\n                \"acc_FJW4fJMjTqmhw\",\n                \"acc_hGirzFHkaUBEL\",\n                \"acc_zrHktfnxfYfAk\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-25T20:59:45.865Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.218Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.217Z\"\n        },\n        {\n            \"id\": \"cxn_KzkNpiWmnfQUG\",\n            \"entity_id\": \"ent_P84PzjkHTLXP7\",\n            \"accounts\": [\n                \"acc_YiAkNG3fMADpA\",\n                \"acc_eqAi7yrYxhnLn\",\n                \"acc_R836bXwzPndHY\",\n                \"acc_xz8m3EqQiTGw8\",\n                \"acc_8DEaRikyhjXXD\",\n                \"acc_DrQkXfiHUEEyn\",\n                \"acc_4atec4xFcjx67\",\n                \"acc_V6YgfnYGFXQ3w\",\n                \"acc_LLTaW49Pwndaf\",\n                \"acc_fJPAgyfayxiy9\",\n                \"acc_V8ibQWMdQYfqK\",\n                \"acc_rXExKLLiKEppM\",\n                \"acc_xGGYhAgn3zJJV\",\n                \"acc_mRbAgyGN9YpPc\",\n                \"acc_nUGxBcyJ4RXFg\",\n                \"acc_KLymDgV4L3qkj\",\n                \"acc_bzgDEqprPPVX6\",\n                \"acc_TBKF8QHeUBWHh\",\n                \"acc_edaReRXNYpRja\",\n                \"acc_kCB7kHU6AzhDr\",\n                \"acc_D4hDX7TUCAmCn\",\n                \"acc_XrzbHAQz7W8UX\",\n                \"acc_PPqimNqdfBERr\",\n                \"acc_KxpYD9VVfBE3r\",\n                \"acc_pbgzWEn8zUk37\",\n                \"acc_hKRBNQx7qFtqq\",\n                \"acc_7RFEqzmrWG3CA\",\n                \"acc_3cgdMtrmFHLP9\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-28T23:19:20.216Z\",\n            \"updated_at\": \"2022-04-28T23:19:41.599Z\",\n            \"last_synced_at\": \"2022-04-28T23:19:41.598Z\"\n        },\n        {\n            \"id\": \"cxn_LqtgbUnzjzRfH\",\n            \"entity_id\": \"ent_jWXYibGdnPqzV\",\n            \"accounts\": [\n                \"acc_KqViUAXiLq77k\",\n                \"acc_XDbcrnnHt8gFp\",\n                \"acc_DmGcDV3iQtJF7\",\n                \"acc_F87dLtraXYfff\",\n                \"acc_jbqnkgwQpPpx7\",\n                \"acc_bYAMCfTEdQBNQ\",\n                \"acc_6zbYwRePLMrLF\",\n                \"acc_8X7JQwdT7NzNY\",\n                \"acc_DQBpWLzUT9wQd\",\n                \"acc_D9zF9GUkineVG\",\n                \"acc_6RRnUxfNxfTrc\",\n                \"acc_dTkHwgN6krkfQ\",\n                \"acc_XtJ77qHbjMpz9\",\n                \"acc_fwQd9gXPqcFjt\",\n                \"acc_YxhE4CAHdg6zN\",\n                \"acc_Pz7FCgGBVLBe3\",\n                \"acc_NgntYpPeEgp6A\",\n                \"acc_ddePzizHcfj6p\",\n                \"acc_aETDfxE4JmRTz\",\n                \"acc_EErrhzzEUwNM7\",\n                \"acc_xDUf9BzXECUee\",\n                \"acc_cFmdrV8Uey6Gg\",\n                \"acc_AgwTNajNr8YWR\",\n                \"acc_7gVTdjTf4TfGV\",\n                \"acc_qbxYcp4qC9pb3\",\n                \"acc_jxJTw8JWtAeqP\",\n                \"acc_i7bTiXVJAAtCp\",\n                \"acc_hUKXQ4KwVUf97\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T22:54:56.229Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.287Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.286Z\"\n        },\n        {\n            \"id\": \"cxn_NgbktmPCyYVGr\",\n            \"entity_id\": \"ent_KmPminbNPYFRe\",\n            \"accounts\": [\n                \"acc_XggWnAPLTdYmm\"\n            ],\n            \"source\": \"plaid\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-05-04T18:08:01.740Z\",\n            \"updated_at\": \"2022-05-04T18:08:14.928Z\",\n            \"last_synced_at\": \"2022-05-04T18:08:14.514Z\"\n        },\n        {\n            \"id\": \"cxn_PGkdhc8TiTcLn\",\n            \"entity_id\": \"ent_JPGaCWpHrFiNm\",\n            \"accounts\": [\n                \"acc_QwUyTRQyPPWGE\",\n                \"acc_6B46Xh3cHGFQT\",\n                \"acc_jRTQUkpi3nGX8\",\n                \"acc_DMRG9Lng9YPDL\",\n                \"acc_kzdhgmTxDh34p\",\n                \"acc_k9PiBgGnXgUrd\",\n                \"acc_FLTeCYyfEMg7H\",\n                \"acc_wiqDJpyGjYULB\",\n                \"acc_w4kFKYBbnHmiR\",\n                \"acc_BUPC8c4zgFePG\",\n                \"acc_yL8RKyhxATtz3\",\n                \"acc_Xkq6DXfgheyFc\",\n                \"acc_PFKPeG4ccAdi3\",\n                \"acc_TqJXAJJg7hVfY\",\n                \"acc_i34XerpVkCnLj\",\n                \"acc_YjBwKe4U3C9c6\",\n                \"acc_6Nh4jMNT6YNXj\",\n                \"acc_QkK9T4RyjJG4P\",\n                \"acc_9yDw9xfaRagkY\",\n                \"acc_JADqMfPcdg6qy\",\n                \"acc_wbrKAiGUdWiBw\",\n                \"acc_ppFkCWKCy8z34\",\n                \"acc_Tcq7N9j84BrBp\",\n                \"acc_qaiPVJXcDMCyF\",\n                \"acc_V3TQXjfdQJWA6\",\n                \"acc_CbfrK4LF34EMt\",\n                \"acc_fDJNqMr7grRnY\",\n                \"acc_mikNzEGr6QYXU\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T18:15:41.807Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.318Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.318Z\"\n        },\n        {\n            \"id\": \"cxn_QgiMXCyKTaHHW\",\n            \"entity_id\": \"ent_NnYzUMCTWJWn9\",\n            \"accounts\": [\n                \"acc_xfwJLNMHBVcep\",\n                \"acc_JnYrty8QAqBVc\",\n                \"acc_DerdPFH4gzi6J\",\n                \"acc_xJGhd9bNkDdKC\",\n                \"acc_AbgnMe49r8GiH\",\n                \"acc_Q3R9fhFyJpPFX\",\n                \"acc_PjHjDcYM3qwLF\",\n                \"acc_6M6GJhBxw3kMg\",\n                \"acc_cqtHaXMNaAT83\",\n                \"acc_ztjkCx4DCU8i7\",\n                \"acc_dTfaFM3FtaFhh\",\n                \"acc_hbcTdyg4jfEkQ\",\n                \"acc_DBGJXxxfxQ3RL\",\n                \"acc_qRCV6LtR3gFFL\",\n                \"acc_yLMimxa8UFyH6\",\n                \"acc_gVLAncwy7cV8m\",\n                \"acc_3dGtbBJBExYrM\",\n                \"acc_3aVVQFqUYB7am\",\n                \"acc_ffMLzKb776ceQ\",\n                \"acc_JLqdHDdT4WiLW\",\n                \"acc_PTyTxCtyAVUXB\",\n                \"acc_BWV9TG7y68zrY\",\n                \"acc_kY7EqyPMUFftB\",\n                \"acc_QJaQkBJVp7JBV\",\n                \"acc_8bNkimLhrDwJP\",\n                \"acc_KGNTgLxPwDtwe\",\n                \"acc_CNqa7xLTqfmCA\",\n                \"acc_AciLpkrNCzhaV\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-05-02T14:29:46.419Z\",\n            \"updated_at\": \"2022-05-02T14:30:12.374Z\",\n            \"last_synced_at\": \"2022-05-02T14:30:12.374Z\"\n        },\n        {\n            \"id\": \"cxn_QjGbzV86Njd8w\",\n            \"entity_id\": \"ent_dXMzNBBKM92LS\",\n            \"accounts\": [\n                \"acc_3feSmLxg8wEws\",\n                \"acc_TDfRJnasMbWhY\",\n                \"acc_yzMz7ARX2n6BV\",\n                \"acc_tsiXGtJW4RV3T\",\n                \"acc_x3wjtJ8mnGVim\",\n                \"acc_cxDNW7hFHmK49\",\n                \"acc_n83jTGYVkxGhQ\",\n                \"acc_4bkVVb7yjg7r3\",\n                \"acc_xCBg9eUz3TrjB\",\n                \"acc_YgxSgsjA7cViq\",\n                \"acc_rCwrr9meHewkL\",\n                \"acc_T8HYH2PzeD7BP\",\n                \"acc_PeNzVrwUCDK42\",\n                \"acc_5Pzmc7mR2DFc4\",\n                \"acc_DG8zp2U5Q7EML\",\n                \"acc_FsYEjwENDe5gW\",\n                \"acc_6ZQfrLTUThf2N\",\n                \"acc_eEGHJzbSDTrDZ\",\n                \"acc_AUzXGx9Wbdi9H\",\n                \"acc_KJcAgebX8BehP\",\n                \"acc_c2MXrWWSjyMPd\",\n                \"acc_SHqw4HsgnrSiU\",\n                \"acc_GNdknxXNqxPSn\",\n                \"acc_m386EQWCa4Ksq\",\n                \"acc_MK46P2ySNQXqR\",\n                \"acc_N6R7Mq9kx8R2J\",\n                \"acc_f96XSWXUkpEE4\",\n                \"acc_U3LRMpUmJHEKZ\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-20T04:13:11.191Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.258Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.257Z\"\n        },\n        {\n            \"id\": \"cxn_Qr6SrVh8DiZTd\",\n            \"entity_id\": \"ent_yqw7BZgtmHgdi\",\n            \"accounts\": [\n                \"acc_PFxS2S2cz2e63\",\n                \"acc_BYnjRf5nx9dxN\",\n                \"acc_WpVjr4cYey22Y\",\n                \"acc_6rNCQ6qUEf9zC\",\n                \"acc_XLEUfbNSMx4az\",\n                \"acc_EUtkRDkUpnSX9\",\n                \"acc_RbZzc7Tbpg57B\",\n                \"acc_qY58UGhpW9xWF\",\n                \"acc_WmxnferZFQcH4\",\n                \"acc_AdnyckEr27VgM\",\n                \"acc_hpjgdtMgtBHti\",\n                \"acc_mHDZpdepTrfE5\",\n                \"acc_CZAnUxnCEzJbr\",\n                \"acc_jDsR2Z5DUY6jx\",\n                \"acc_hBWTSrCBCwZUn\",\n                \"acc_RNpqkjyaB7kTn\",\n                \"acc_m93TEB46mMYQ2\",\n                \"acc_6B59EqL3fb3CN\",\n                \"acc_ByKBWGj5qhneG\",\n                \"acc_txqp8zQFnLHU4\",\n                \"acc_Hmd7pp7KCsW7t\",\n                \"acc_mDeRTP5jzFaP2\",\n                \"acc_qAgFxL3jNLaTY\",\n                \"acc_c5f2NACzQCYSY\",\n                \"acc_XLCBNn4BTeJwU\",\n                \"acc_Hrz3RDqVLRxmK\",\n                \"acc_cwyGWzRtnQWnm\",\n                \"acc_pYh5we844k2EG\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T17:02:07.432Z\",\n            \"updated_at\": \"2022-04-28T07:04:11.633Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:11.632Z\"\n        },\n        {\n            \"id\": \"cxn_RTX6UwpjC3mYQ\",\n            \"entity_id\": \"ent_efG3pN869yHPd\",\n            \"accounts\": [\n                \"acc_6dcLExGUUCtWH\",\n                \"acc_pJk6pL3GE44xV\",\n                \"acc_x8hCEiW9Bx8HV\",\n                \"acc_qTQqjExt6UwEA\",\n                \"acc_hFkJVRJPQX7V7\",\n                \"acc_8Hr6RJ6pPetbc\",\n                \"acc_yKRGUJpgHYzqL\",\n                \"acc_PyQdkMKGf6Aj6\",\n                \"acc_GKUKb3DmrKkhr\",\n                \"acc_JQwMtWF4N6HP8\",\n                \"acc_qzpGkgVaNHErt\",\n                \"acc_TXgDMgdbVdrGP\",\n                \"acc_qhcfaf3P9hWeA\",\n                \"acc_XzaAM8fEqXhbb\",\n                \"acc_7Ri8Wxwb4bh9i\",\n                \"acc_wyKd3yDgBeXgc\",\n                \"acc_YcybTHA8DwYjy\",\n                \"acc_3weMKjLLWdMtr\",\n                \"acc_Qi8RwGYYKnUJM\",\n                \"acc_DEPqJE8yD9xVC\",\n                \"acc_HqEJVDaLYcUJW\",\n                \"acc_V4QHiLmBGJ7kK\",\n                \"acc_PQ7WwMz3Vedgw\",\n                \"acc_mKtXf7LVaqc9r\",\n                \"acc_V6ry4entgz8TF\",\n                \"acc_Na9CYUiqfkez7\",\n                \"acc_FpPpdeNqC9pGp\",\n                \"acc_9yTH64gFjz6Cf\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-05-03T23:43:59.336Z\",\n            \"updated_at\": \"2022-05-03T23:44:10.210Z\",\n            \"last_synced_at\": \"2022-05-03T23:44:10.209Z\"\n        },\n        {\n            \"id\": \"cxn_T7wm9E2njpfb4\",\n            \"entity_id\": \"ent_4wbq8iQfYCHmM\",\n            \"accounts\": [],\n            \"source\": \"plaid\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-03-22T02:41:00.046Z\",\n            \"updated_at\": \"2022-03-22T02:41:22.590Z\",\n            \"last_synced_at\": \"2022-03-22T02:41:22.589Z\"\n        },\n        {\n            \"id\": \"cxn_V4L4xYNXnFRGB\",\n            \"entity_id\": \"ent_XPzRykJAY9iAt\",\n            \"accounts\": [\n                \"acc_ZA4GDfzUZYGze\",\n                \"acc_xdPGtf3b7Za6P\",\n                \"acc_rZEMTZmQCHLDA\",\n                \"acc_rPK6HfNPRQ3Ce\",\n                \"acc_HNLyYQHVcRDpZ\",\n                \"acc_g6pfMafpGwEHk\",\n                \"acc_sw9ZYUfMdW6if\",\n                \"acc_rBeKWkKT6DQ6q\",\n                \"acc_sT6tjWpdEwNDL\",\n                \"acc_QZ6QrXDxdsJws\",\n                \"acc_NpntMaTqaHewn\",\n                \"acc_WEgZqBy2REfNp\",\n                \"acc_h2Vbw6Lrwqsnz\",\n                \"acc_YQmPPRiEGKqPr\",\n                \"acc_kHKq2WK69xceL\",\n                \"acc_Yqt9WpdUHW2VD\",\n                \"acc_PkqPaimtASaWA\",\n                \"acc_6nHjb7GSs2CRS\",\n                \"acc_FsiAs55n6Shz6\",\n                \"acc_GcPHUW4R6iPp9\",\n                \"acc_2gqCz5GepzGPx\",\n                \"acc_ZGMV83kZiBKwh\",\n                \"acc_xbHqnhZSEFQYG\",\n                \"acc_S9FtUtYhtjZEJ\",\n                \"acc_kCMSfsJrECXxA\",\n                \"acc_qLghVa63t3xrj\",\n                \"acc_Gef3qeGKRLtWz\",\n                \"acc_TXLYdABAAx8Vf\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-18T23:10:34.448Z\",\n            \"updated_at\": \"2022-04-28T07:04:10.664Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:10.663Z\"\n        },\n        {\n            \"id\": \"cxn_WhJj5KtsrBgPz\",\n            \"entity_id\": \"ent_Fq57rpDsdfwif\",\n            \"accounts\": [\n                \"acc_VJqRqJTUhcfYR\",\n                \"acc_tasERB9YJU5QK\",\n                \"acc_J46n75NwAJaYa\",\n                \"acc_d8qHYAbJTeBxi\",\n                \"acc_ksB9mE7MxjsiA\",\n                \"acc_pzaR4TrBkzfjx\",\n                \"acc_gkafZs4zK7p5E\",\n                \"acc_tc7DmpT45L3ij\",\n                \"acc_CqsEQGQ4g32gC\",\n                \"acc_4W4RpgFmhEYDw\",\n                \"acc_JWrYYkCaPC3D4\",\n                \"acc_qBheL6qryTBSC\",\n                \"acc_M2DqjKUqTUK7W\",\n                \"acc_yWetRi495RZXM\",\n                \"acc_q2eYbMkGdNAk4\",\n                \"acc_6jxpHF3yS7VkB\",\n                \"acc_L7q9TKKg6kPXM\",\n                \"acc_9ED6C2XACQBwZ\",\n                \"acc_SmmVjcqa9ZbcA\",\n                \"acc_2JAk7y3RsEtJK\",\n                \"acc_8fzGMRGnY2AhE\",\n                \"acc_GgQfEa4xPFc3c\",\n                \"acc_U8hGE4Zt6VMfB\",\n                \"acc_zc8bPTkBnKbwb\",\n                \"acc_mgp4i6katqNCD\",\n                \"acc_SAMRMn33XkM7K\",\n                \"acc_9V5Ls54tAAzx7\",\n                \"acc_LX4TTDPapFitc\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-18T23:35:29.911Z\",\n            \"updated_at\": \"2022-04-28T07:04:10.695Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:10.689Z\"\n        },\n        {\n            \"id\": \"cxn_Xa8DFKHJCEp3g\",\n            \"entity_id\": \"ent_Qb7AVtxFQRQUa\",\n            \"accounts\": [\n                \"acc_7zD7cJaihAFty\",\n                \"acc_TLirjbJLJUP3w\",\n                \"acc_qXFyDaPH8Firb\",\n                \"acc_tEKRbLjUXF7gJ\",\n                \"acc_YiEendgUJhfzr\",\n                \"acc_HxULyCrCBVeVc\",\n                \"acc_fhFW6p3qMBHfm\",\n                \"acc_ntFwPtHfRAp4w\",\n                \"acc_6p8HXAehPNtw4\",\n                \"acc_8946VtGXVNJgY\",\n                \"acc_tYaDLQMNDFMf9\",\n                \"acc_dtDMyGaczDhBn\",\n                \"acc_R9dGLBwzDJHXK\",\n                \"acc_Le4NxnUaAcrHK\",\n                \"acc_DVyW9kxiWkj6w\",\n                \"acc_HCRnGKn6LGB7C\",\n                \"acc_6kdM8GX73xPYJ\",\n                \"acc_nQDrYwBJahkLM\",\n                \"acc_GTFJhEUNiCjji\",\n                \"acc_QMXCAaUUydKL4\",\n                \"acc_TJ7BtFErXAPi7\",\n                \"acc_ajULftFCPVXap\",\n                \"acc_GH8nd3AigHdcU\",\n                \"acc_LyNYVDNj8naep\",\n                \"acc_jaNwcg8TCNW8n\",\n                \"acc_C4NzQUVi6txFU\",\n                \"acc_6Mb67kxak6R8N\",\n                \"acc_7pQjDpKjQt9iw\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T19:48:22.960Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.235Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.235Z\"\n        },\n        {\n            \"id\": \"cxn_XmLBkaPTTdqdk\",\n            \"entity_id\": \"ent_NLbVTY3NkJAax\",\n            \"accounts\": [\n                \"acc_ParMHWQ8aRAM4\",\n                \"acc_ntGKEimK4kp4Y\",\n                \"acc_N4NinWdawtJPq\",\n                \"acc_BjdUTENb7xAwy\",\n                \"acc_prULJ8KjQMkGT\",\n                \"acc_8zAnCha4TbYHL\",\n                \"acc_wfNq6rCEacHdg\",\n                \"acc_44HUqHUMiTqe3\",\n                \"acc_BG9xbHPkjN9gQ\",\n                \"acc_zimWAyQCjyxL9\",\n                \"acc_zjpdhBaiwyCfN\",\n                \"acc_iR8xmf9DHyNUj\",\n                \"acc_wTEMz7xRbA7i4\",\n                \"acc_raYpzYwb4baph\",\n                \"acc_F3fFYqDnzpCqy\",\n                \"acc_nyQDfhMV4BE8X\",\n                \"acc_jtGi9fjqtpFpH\",\n                \"acc_UCP7YCbUwpTLm\",\n                \"acc_cjJMYCfHabftW\",\n                \"acc_WTpJJWBnVFr8a\",\n                \"acc_yKkdixE6mQReW\",\n                \"acc_rqw9yGjCLFEVP\",\n                \"acc_7qAn9pMXPhLxR\",\n                \"acc_gJrMardfMiTPy\",\n                \"acc_hfMCdqNcQ3RYz\",\n                \"acc_RFYHNeVVyT37J\",\n                \"acc_MQNjCzDg8mHHe\",\n                \"acc_D3wWhUfLdegEC\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T18:16:07.353Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.021Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.020Z\"\n        },\n        {\n            \"id\": \"cxn_bAJNqz3ThEVJJ\",\n            \"entity_id\": \"ent_V48EHBQbCYBBF\",\n            \"accounts\": [\n                \"acc_JWnGDnNtPQRHT\",\n                \"acc_WRCPGRKgNqiCM\",\n                \"acc_VYN6AqinHPRkJ\",\n                \"acc_qiggPhrKe6dhY\",\n                \"acc_gpVAMWBrNxRyR\",\n                \"acc_BTpMfhMC8kpWP\",\n                \"acc_gEmFg9CDyj9Kb\",\n                \"acc_GrJYDNBG7Qktq\",\n                \"acc_4nUw4xci6wWLR\",\n                \"acc_R66aTikc79rXA\",\n                \"acc_cLXqxbTQEwtcq\",\n                \"acc_6ExJhkMnktATp\",\n                \"acc_7y6XEf6E9AMaQ\",\n                \"acc_3fYnrGKynCAAN\",\n                \"acc_7cagRXyCDBpaA\",\n                \"acc_c8jrqjYPTyafR\",\n                \"acc_ArXPUEz8wnH8E\",\n                \"acc_6TfWj3fLB9gfG\",\n                \"acc_AnbTCRFDAQDV4\",\n                \"acc_xidJpFUdeJwQ6\",\n                \"acc_WKygEHhXxcPGb\",\n                \"acc_ejhdFBKbznEmh\",\n                \"acc_jYCApkcUAaaVD\",\n                \"acc_YLT6mhQeUFf69\",\n                \"acc_afJgbyirN88rC\",\n                \"acc_8iXEVAgzEpBwF\",\n                \"acc_VwGxmnFbDtnjb\",\n                \"acc_a6ydfWacfbtdK\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T21:09:29.223Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.335Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.334Z\"\n        },\n        {\n            \"id\": \"cxn_bjaqY2dSh6rgZ\",\n            \"entity_id\": \"ent_8AwCy2txCsUXp\",\n            \"accounts\": [\n                \"acc_ALyUnF74f5eEp\",\n                \"acc_gQQGZZGzn9KNg\",\n                \"acc_JEztqbCmWfj45\",\n                \"acc_jg5S3n2NwCURM\",\n                \"acc_rs2zedmRGfVhe\",\n                \"acc_x57Ykk3E6QSDh\",\n                \"acc_RwmRFyairewD7\",\n                \"acc_MnjwG49X5VbUf\",\n                \"acc_xpVmeWahTanVY\",\n                \"acc_ijRXkfnw8USk5\",\n                \"acc_93PDfpmZEPJhb\",\n                \"acc_X3rf98JpxNhhY\",\n                \"acc_6cpdBxSz3ejGt\",\n                \"acc_GhNDx8YAFZ27m\",\n                \"acc_fUDeGdBiatcNX\",\n                \"acc_6wWTK2ANfDsgg\",\n                \"acc_ckddhLLdV4xGh\",\n                \"acc_THtAxSUhznX3m\",\n                \"acc_ZqTUSWKRxQYK2\",\n                \"acc_A5pqRWG8jJi7a\",\n                \"acc_EWpQLzLdVjtXt\",\n                \"acc_qmLCNJXFajNfm\",\n                \"acc_iEnzzD47FAzND\",\n                \"acc_7QkZMSnnPXcrt\",\n                \"acc_gLJ44HgNFzNRr\",\n                \"acc_hp3twUAJjU7YW\",\n                \"acc_QSq9JeRkDF9V5\",\n                \"acc_mR2BtBnCTzHzx\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-18T23:38:35.121Z\",\n            \"updated_at\": \"2022-04-28T07:04:10.421Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:10.421Z\"\n        },\n        {\n            \"id\": \"cxn_cQAFhmnFxJeGc\",\n            \"entity_id\": \"ent_3DLcNdt3hrPEp\",\n            \"accounts\": [\n                \"acc_8GwU39QnPW37D\",\n                \"acc_pqjzQ787nC7nx\",\n                \"acc_3U8DJaBQbg7gM\",\n                \"acc_VgNgm4iXrkwhL\",\n                \"acc_zhicQM88Bphr3\",\n                \"acc_rNaqt3apLUfzm\",\n                \"acc_kRXPDNzcMY9DA\",\n                \"acc_iVkdGAJd73yzw\",\n                \"acc_6hPxJnfwQhcHw\",\n                \"acc_6i3d69atmC6AQ\",\n                \"acc_TaewREcWYMTa9\",\n                \"acc_ntYLjUJKxYHrh\",\n                \"acc_R4B8i9F7jUUJK\",\n                \"acc_dAXiqDXUN9fF6\",\n                \"acc_4VHgfNWTF6M3k\",\n                \"acc_6eTdWTGdj36CU\",\n                \"acc_DVrqigGpYTM9b\",\n                \"acc_cy6gCXWiTmzht\",\n                \"acc_38YaDRzFfmAaQ\",\n                \"acc_CFNGCg7p9kfky\",\n                \"acc_D7xJMhBR8RY4Q\",\n                \"acc_LrRFyknLwLA67\",\n                \"acc_znYjFtirXnmHx\",\n                \"acc_wmG4N39eDbeYy\",\n                \"acc_H6HPmRBBDjPHW\",\n                \"acc_m37PymrMUVwRf\",\n                \"acc_L97b4V3PPcGfk\",\n                \"acc_FM9ECLgaJAWnF\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-05-03T17:56:40.672Z\",\n            \"updated_at\": \"2022-05-03T17:56:54.710Z\",\n            \"last_synced_at\": \"2022-05-03T17:56:54.709Z\"\n        },\n        {\n            \"id\": \"cxn_cbwQVfmncT86N\",\n            \"entity_id\": \"ent_LVnxEXRf8B34f\",\n            \"accounts\": [\n                \"acc_fecQ7MJWQ7kK6\",\n                \"acc_WbQTtFf4LCa68\",\n                \"acc_TxFttgdJ4iigh\",\n                \"acc_8wiec33grBk7F\",\n                \"acc_z6rxhDWERByxV\",\n                \"acc_hBLzTXJzBxttM\",\n                \"acc_CTtERrGyaaF8d\",\n                \"acc_T7BB4TWGKnFtY\",\n                \"acc_XeHWrxQzhfjkr\",\n                \"acc_htHj7ige7byUj\",\n                \"acc_rf8UYT9bBbHUX\",\n                \"acc_dbajf8bCjhFRy\",\n                \"acc_jcnQEJeMUrfNF\",\n                \"acc_cxDWjKUN3texD\",\n                \"acc_rRzGVKLgngnUC\",\n                \"acc_DV47PntQFf9Dr\",\n                \"acc_zFNKzEKtqEnE6\",\n                \"acc_L86GEhPLhF6Q6\",\n                \"acc_B49caMbjbg7G4\",\n                \"acc_XQpYdB3K8hN6b\",\n                \"acc_zH9nabW7nKzwj\",\n                \"acc_crpUhte7DpC9B\",\n                \"acc_wgRhAaXM6KLdD\",\n                \"acc_6beBtPBWcAjEJ\",\n                \"acc_7P833k7NBmb9k\",\n                \"acc_hNqk878mPyJyh\",\n                \"acc_wVC6fNUinH8BG\",\n                \"acc_tiihyQqp86mf7\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T12:37:11.357Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.378Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.377Z\"\n        },\n        {\n            \"id\": \"cxn_eBFm5VgRrxWG8\",\n            \"entity_id\": \"ent_TCTFjiKWt6dd7\",\n            \"accounts\": [\n                \"acc_qXwXsreJLdRpj\",\n                \"acc_as6Mn7AkRRm8Z\",\n                \"acc_Wt5bMXMERCH7r\",\n                \"acc_JHhATzDzpwsw8\",\n                \"acc_XeZjHkm2JUngd\",\n                \"acc_EkJDPaszJ4DQD\",\n                \"acc_AhPbb8zNFZYmF\",\n                \"acc_R9QYGZQpGrmYn\",\n                \"acc_SsyVKM6PRakRF\",\n                \"acc_6mYK9VQg8NKLZ\",\n                \"acc_kn2gAZs7mk3ie\",\n                \"acc_mxMTPWTSCwLje\",\n                \"acc_BJhkHmNwP2CEW\",\n                \"acc_AnW33d7ZtmK8K\",\n                \"acc_jTsTAePayVcUj\",\n                \"acc_G55RLLEEXKVEB\",\n                \"acc_YpbgepRQ4QdVZ\",\n                \"acc_trRcnDZfpLTXJ\",\n                \"acc_eCdXNNAZr6xXx\",\n                \"acc_NH4eLVehxkw4q\",\n                \"acc_eWGV9MhSAJDeb\",\n                \"acc_ib7qCm7gUJZLC\",\n                \"acc_Q34HygHpjrMyg\",\n                \"acc_q9k8ithtq83GZ\",\n                \"acc_geEH9DeZcciTp\",\n                \"acc_VhSsyUEPd5w4x\",\n                \"acc_Lr87Sgj45Aibs\",\n                \"acc_xSUtmABXadkcp\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-18T22:13:52.282Z\",\n            \"updated_at\": \"2022-04-28T07:04:09.460Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:09.458Z\"\n        },\n        {\n            \"id\": \"cxn_eiTiFKNfniTjp\",\n            \"entity_id\": \"ent_Hk2FKgbMnMYfJ\",\n            \"accounts\": [\n                \"acc_QJVin9JtwDHmY\",\n                \"acc_5efZhUrWDKGir\",\n                \"acc_H2C2qqt843D6D\",\n                \"acc_SVprfHTt9yKVL\",\n                \"acc_HSAbFUe2ShGGM\",\n                \"acc_xTYLFsfJLBFMT\",\n                \"acc_PQG9dzgnBiVPg\",\n                \"acc_Y5mkXAAmGyHNc\",\n                \"acc_5tjP8GgKp4tFj\",\n                \"acc_NGFsniQkbiwgi\",\n                \"acc_ZNAAeZcnYJYQ3\",\n                \"acc_GDDSViqwriUre\",\n                \"acc_kDjgiGWJDtiNB\",\n                \"acc_TTgyUCCdzqwUX\",\n                \"acc_pZg6HFZb9fe9m\",\n                \"acc_CMStcyQnLVGWr\",\n                \"acc_r7JtamFa6XNVA\",\n                \"acc_HhPrXECR2r8Ca\",\n                \"acc_5w4BpthHQAFSt\",\n                \"acc_DTCptGem96hBL\",\n                \"acc_WAbrsFR7xqEYV\",\n                \"acc_AykP5rcVQ26B9\",\n                \"acc_P69mWW49YRe6T\",\n                \"acc_Y56P7n7kwMg2p\",\n                \"acc_z4YSpqzhmDMzG\",\n                \"acc_FYMMqdyxPRQf5\",\n                \"acc_2pVzVsT3YnQmY\",\n                \"acc_Xdn5Knbi7xhp6\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T15:37:52.377Z\",\n            \"updated_at\": \"2022-04-28T07:04:11.121Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:11.118Z\"\n        },\n        {\n            \"id\": \"cxn_fXFUYKRaaFknR\",\n            \"entity_id\": \"ent_9Y8VbNirhjiz6\",\n            \"accounts\": [\n                \"acc_S6ZWTxXMpNZqj\",\n                \"acc_NmbnZxVH7QXmk\",\n                \"acc_q5RRj7FQPYsDD\",\n                \"acc_4FrCqCVkF65Tb\",\n                \"acc_gRW8ybHJMTDDB\",\n                \"acc_eyEzbAAzniq74\",\n                \"acc_CGg2gaQxZBq4X\",\n                \"acc_XkhDNbwgWYGNt\",\n                \"acc_j9idgrCsNxN25\",\n                \"acc_7P35eQLes4LgK\",\n                \"acc_3fzCRniW3Nt5C\",\n                \"acc_ziAMe7DJY9wBD\",\n                \"acc_dPMa7t2UPLzaC\",\n                \"acc_fjy3imNWH58Xc\",\n                \"acc_93GHwLcxztpRe\",\n                \"acc_jDgD4mcc3fMU6\",\n                \"acc_qZVwC39qKjpVy\",\n                \"acc_SQKqz4YUR427r\",\n                \"acc_H9MYU9bwPQsj2\",\n                \"acc_VEnWeDGdByq6U\",\n                \"acc_N7zqXgDt9NhfK\",\n                \"acc_payJbdK75NTCf\",\n                \"acc_nEsE6D9TSfSkA\",\n                \"acc_ytegwZmNBjPNN\",\n                \"acc_sJBzQW84HWn4M\",\n                \"acc_RGECVHehpDVRL\",\n                \"acc_XY7TkXmBgxmtp\",\n                \"acc_yZAbJSm7YQKYs\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T16:17:59.212Z\",\n            \"updated_at\": \"2022-04-28T07:04:11.294Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:11.293Z\"\n        },\n        {\n            \"id\": \"cxn_gS7TWF7SpiLdy\",\n            \"entity_id\": \"ent_2mngH2xcLBFSS\",\n            \"accounts\": [\n                \"acc_EX8fxf4SnS2fg\",\n                \"acc_EM5HeUPAsbVke\",\n                \"acc_GBT6rGcmxtC98\",\n                \"acc_zcL3NyYhkdk9e\",\n                \"acc_CHDSCjiZK4KSW\",\n                \"acc_HNgty2RaXw8Sq\",\n                \"acc_fgi3RsUDJQB9E\",\n                \"acc_SUyfXaNcSezEn\",\n                \"acc_J7VW8xYKiYnQQ\",\n                \"acc_kdb7rjV8UB7Gm\",\n                \"acc_F7kfr59Xa5ReD\",\n                \"acc_8X94djNQS4H8D\",\n                \"acc_2ai3t7NaSSSS2\",\n                \"acc_6iq8bRe8VEnaT\",\n                \"acc_yMngb57GXiWSR\",\n                \"acc_UXrngyjWSDQ9B\",\n                \"acc_54gBSmePSywqU\",\n                \"acc_sqmqMEJtCJSnd\",\n                \"acc_6TEEXKKzjZTkh\",\n                \"acc_QCAG3JDMYSVXj\",\n                \"acc_phnji3hg4Xk6Y\",\n                \"acc_3jT577nTEkiZp\",\n                \"acc_sSJTR4ck9hNfG\",\n                \"acc_MC5TKbB3bZGkd\",\n                \"acc_TKxhxemSULmaC\",\n                \"acc_kxEwPYBhSeYZa\",\n                \"acc_LaNYHkfLBxtiG\",\n                \"acc_dJg6zGLr6Dwjj\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-20T01:30:57.648Z\",\n            \"updated_at\": \"2022-04-28T07:04:11.977Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:11.976Z\"\n        },\n        {\n            \"id\": \"cxn_gnJTryeEk3mDi\",\n            \"entity_id\": \"ent_zDx79LT9f8X3m\",\n            \"accounts\": [\n                \"acc_QfNttiQGAChy6\",\n                \"acc_ha3AxatDmQRrM\",\n                \"acc_XpBYGqHVyhYCk\",\n                \"acc_UCAKtbA49yCrc\",\n                \"acc_8XEiRrBpYaqpB\",\n                \"acc_htLQNHbn79YEe\",\n                \"acc_mDef338UwUpmE\",\n                \"acc_gJwbTAh6jWcVG\",\n                \"acc_qqKRV33xG3z4e\",\n                \"acc_LqLBnnXJbLqzy\",\n                \"acc_83fiknL638ygW\",\n                \"acc_7MkaezwP6BA6c\",\n                \"acc_EKHGiqpbn98T4\",\n                \"acc_49yHnqpbA9yFa\",\n                \"acc_xffzCGAwzLqq4\",\n                \"acc_hDXyVhBpaRDJK\",\n                \"acc_xmw8YkCdrRwWF\",\n                \"acc_y4rCqD8KFx9P4\",\n                \"acc_JpKb9nH8bwccU\",\n                \"acc_WAnQxR7dFrcBa\",\n                \"acc_8XiekibdR79Hd\",\n                \"acc_MjQH48yitNNr6\",\n                \"acc_xfjaBwNqbrq4j\",\n                \"acc_nLGq3FmpTW7xP\",\n                \"acc_KjyNt6Wh3WFjp\",\n                \"acc_PFztWArzR6GiE\",\n                \"acc_Q4qxGaTK4BmVW\",\n                \"acc_pKYbLVGF4gPGB\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-28T16:55:04.077Z\",\n            \"updated_at\": \"2022-04-28T16:55:23.777Z\",\n            \"last_synced_at\": \"2022-04-28T16:55:23.777Z\"\n        },\n        {\n            \"id\": \"cxn_haMUC97QUM6LX\",\n            \"entity_id\": \"ent_gCNbJLkYAzkfi\",\n            \"accounts\": [\n                \"acc_tUwGPhcPxWyqY\",\n                \"acc_MyCkpRDMm4fgd\",\n                \"acc_NCh7Q3MtDWCEY\",\n                \"acc_7U3y8HnrEQ3pX\",\n                \"acc_Bw3nEWX384L4N\",\n                \"acc_wXPgkbNip6DnM\",\n                \"acc_Ub7YcNipMJ4cb\",\n                \"acc_Gc7MHmqaWD8YL\",\n                \"acc_DHEiQArGNcgBf\",\n                \"acc_PpiVhLxXzWFM9\",\n                \"acc_YU9Wta7WVKKPc\",\n                \"acc_w8A77Mw3MrbDz\",\n                \"acc_qyTriMyTMpbcW\",\n                \"acc_mkNMrt8LH4Ppa\",\n                \"acc_RUtdYQmTiJexm\",\n                \"acc_tMJhtYDytCRKX\",\n                \"acc_hXpc8Cdhjykrq\",\n                \"acc_J6DTgqfAkfn9C\",\n                \"acc_zpRRhhaDKMQjN\",\n                \"acc_QJdcUxE3exVKE\",\n                \"acc_iaKtrrhYzdgha\",\n                \"acc_h6yeTMDRHQeUr\",\n                \"acc_YdPE89RMDQp4T\",\n                \"acc_JNGtyFXXrE9i7\",\n                \"acc_YhKqxkPXMPe3w\",\n                \"acc_L7KzQaAeTHUzH\",\n                \"acc_X6BDkgGpbGNnm\",\n                \"acc_w3qUgV74bpdj6\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-05-03T23:46:35.393Z\",\n            \"updated_at\": \"2022-05-03T23:46:45.907Z\",\n            \"last_synced_at\": \"2022-05-03T23:46:45.906Z\"\n        },\n        {\n            \"id\": \"cxn_jPSaX3jYk8WgE\",\n            \"entity_id\": \"ent_LUi4VDsrwZN2D\",\n            \"accounts\": [\n                \"acc_D3CFe2xwmd73K\",\n                \"acc_Et44geAsaXkpW\",\n                \"acc_TTg3i3f7UpGiH\",\n                \"acc_A4AHNVqHgTsMe\",\n                \"acc_RRM3ywASwcYZA\",\n                \"acc_JAUwiU6kJhKSN\",\n                \"acc_2733BepEcNb2p\",\n                \"acc_y76aGcsn3iCUF\",\n                \"acc_QpLgrfa44TSzc\",\n                \"acc_7Z5HnXjn83aiM\",\n                \"acc_sdGTGjQTU9xVQ\",\n                \"acc_THtpY8JDUPHT5\",\n                \"acc_Dn86WZcjAZPT4\",\n                \"acc_iCgSQVeTqixfk\",\n                \"acc_RCrGPqzSBH6fS\",\n                \"acc_HYbFam3gkFCtZ\",\n                \"acc_j3ZYUDeFwqymY\",\n                \"acc_XQ5TQFhWCpTrs\",\n                \"acc_R9CX6ExjsPfy2\",\n                \"acc_Urt63tKErkKpV\",\n                \"acc_aiTxU9Y7V2A7i\",\n                \"acc_SB5VnYmCxw8Hj\",\n                \"acc_27MTsP7G2SeWp\",\n                \"acc_xKXMnzAS2ifRj\",\n                \"acc_93tGZiUkH3Am6\",\n                \"acc_Y8J5EeE8rdScL\",\n                \"acc_P4sWAK3PmYiCC\",\n                \"acc_cPLf4q7kaWfG2\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-18T22:14:42.038Z\",\n            \"updated_at\": \"2022-04-28T07:04:10.375Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:10.372Z\"\n        },\n        {\n            \"id\": \"cxn_jtEyEpJyMCbVp\",\n            \"entity_id\": \"ent_QdmhEdGazmCiB\",\n            \"accounts\": [\n                \"acc_gPFge97N3fMet\",\n                \"acc_WTJRwtYTz8iQB\",\n                \"acc_8wy9F76gVwcyq\",\n                \"acc_zaq44g7xi7iDr\",\n                \"acc_MbyKLjfG6ty4U\",\n                \"acc_YNCBy7xt6mpit\",\n                \"acc_hCiidmzXqwEyH\",\n                \"acc_iEKRrdLzTXD7c\",\n                \"acc_JjUadjQkUVm84\",\n                \"acc_VjYyfQqRriMEQ\",\n                \"acc_V37rywWAbEQyJ\",\n                \"acc_PMTW7wTrbFkpk\",\n                \"acc_QJKgBaCJtf648\",\n                \"acc_YPqjxRLegNptW\",\n                \"acc_A9bApQTERinHV\",\n                \"acc_wYxzxiDXyUcbh\",\n                \"acc_FcieDYp9ezRQ3\",\n                \"acc_wa8tmjFNLdkjB\",\n                \"acc_icXic4zPKrqdk\",\n                \"acc_nLWC6Tmnk8nKg\",\n                \"acc_N7zh4EgEHzbYK\",\n                \"acc_CpWmmn4nymdkg\",\n                \"acc_P3jWcRqUajNAP\",\n                \"acc_8ARztz9m3nw9x\",\n                \"acc_rJmtYRp3c8UxQ\",\n                \"acc_njqrm4MrDtRiT\",\n                \"acc_gdcUWaNyth77F\",\n                \"acc_pfDLnNpaRkbPN\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-21T19:03:40.469Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.125Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.125Z\"\n        },\n        {\n            \"id\": \"cxn_pUUpNKn3Ni7dj\",\n            \"entity_id\": \"ent_HirhhcyjKWDaE\",\n            \"accounts\": [\n                \"acc_HwWmmTemekx88\"\n            ],\n            \"source\": \"plaid\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T15:59:35.530Z\",\n            \"updated_at\": \"2022-04-27T15:59:48.605Z\",\n            \"last_synced_at\": \"2022-04-27T15:59:47.862Z\"\n        },\n        {\n            \"id\": \"cxn_ptKYcBCT5GKTa\",\n            \"entity_id\": \"ent_6ms7FV3iUg4qb\",\n            \"accounts\": [\n                \"acc_dpHARNEhP7LEy\",\n                \"acc_FbpBbaDCShSpq\",\n                \"acc_Pbwt45K4K2Sis\",\n                \"acc_mjEtqzYKh3pRP\",\n                \"acc_nt4twe5gJzWzd\",\n                \"acc_CgQUiJZiaHyqK\",\n                \"acc_Z5c6mz6EgEWNU\",\n                \"acc_pkBT5SjW4w9xw\",\n                \"acc_ftAtrpHABrPq2\",\n                \"acc_VxcUjd2Gyknh3\",\n                \"acc_SYXiF6Wkn5Pzs\",\n                \"acc_rEgHnLJgZyXab\",\n                \"acc_D83X48dW8hy5J\",\n                \"acc_Z6LWDHMdRxrjZ\",\n                \"acc_paL7nFEcWztPD\",\n                \"acc_tRDKzTfaVqZVD\",\n                \"acc_kkdQ7LnTXdH6M\",\n                \"acc_AbteaN3hLKRsd\",\n                \"acc_tCjgNEUTC75QW\",\n                \"acc_kWaZW8mgrPfeH\",\n                \"acc_Hj35433ZeNwqk\",\n                \"acc_g2qWVVWK6NCzS\",\n                \"acc_3fNsMpR9TpRCB\",\n                \"acc_QwShtpwAnyYYy\",\n                \"acc_izCm7gkg4Y8BS\",\n                \"acc_2fznpiEinEQfM\",\n                \"acc_dFXC3pCtbYziF\",\n                \"acc_z3gdBWRWF8Jxt\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-20T15:03:57.213Z\",\n            \"updated_at\": \"2022-04-28T07:04:12.763Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:12.762Z\"\n        },\n        {\n            \"id\": \"cxn_qDPNzWyxW8RW6\",\n            \"entity_id\": \"ent_r3YttwahPDTnG\",\n            \"accounts\": [\n                \"acc_tFMNM48W77h94\",\n                \"acc_8UYHfPKr4jnJz\",\n                \"acc_NrN6F7gW7MXKU\",\n                \"acc_ANpq47B4EeFtP\",\n                \"acc_bGDqUQahU9Ngg\",\n                \"acc_DJ8heL8eTFgXL\",\n                \"acc_MX7RUhTdqNFzt\",\n                \"acc_p9WgEULyAa3wT\",\n                \"acc_ahcbCBeiJLkYn\",\n                \"acc_jGz44WJKPhMRN\",\n                \"acc_MFkPzyNdCWGH3\",\n                \"acc_DWggxpA7VNDhm\",\n                \"acc_tzqaJFdgkVPhQ\",\n                \"acc_ctqt9nBi79mbn\",\n                \"acc_QMtrjf7kmNExn\",\n                \"acc_HBha4aNAyQTdp\",\n                \"acc_hH6RDJGeqCjaG\",\n                \"acc_UHYjaAh7cNkcK\",\n                \"acc_6FHV4qaY4xPjp\",\n                \"acc_JpYTFAYLzbR4k\",\n                \"acc_CXNCDj8PykHqt\",\n                \"acc_Tgk6cCrU3UJPp\",\n                \"acc_dFVArYczJPc9a\",\n                \"acc_cETbrJzL7UKVP\",\n                \"acc_7NmF9eKpdqXDJ\",\n                \"acc_PPVgk3brYCe3c\",\n                \"acc_Ma3kyAxdJKfdf\",\n                \"acc_J8xF96yaL6ayp\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-27T16:45:11.074Z\",\n            \"updated_at\": \"2022-04-28T07:04:13.391Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:13.390Z\"\n        },\n        {\n            \"id\": \"cxn_qPLVVQXb7tHAQ\",\n            \"entity_id\": \"ent_xBJNFj4y7TczG\",\n            \"accounts\": [\n                \"acc_3fbtmWD6w6KUe\",\n                \"acc_kNNjTzAx4DKhL\",\n                \"acc_3zGV3nye8MjKJ\",\n                \"acc_KFGVx7wCqgPYY\",\n                \"acc_rrYrAjkMYCN6A\",\n                \"acc_wc9yKhaihrxPm\",\n                \"acc_P9pzTfktJWY9G\",\n                \"acc_ALYzPpdGePtjt\",\n                \"acc_nHLVGaQMNNtQn\",\n                \"acc_cM9VzwhfadeY9\",\n                \"acc_RQrJzFhzxtgxx\",\n                \"acc_CMGYcTQQGrdpW\",\n                \"acc_YzThEkNYM94iM\",\n                \"acc_78hERWwEbR7f4\",\n                \"acc_XweVgMYmQNK9q\",\n                \"acc_LwRheQN9t7wAG\",\n                \"acc_NhaqCndwfyW9R\",\n                \"acc_tDGAH4rYTLwaR\",\n                \"acc_YgJFPmBgPwGfm\",\n                \"acc_NcNaCwKtABDNX\",\n                \"acc_HMBBERXVQzctE\",\n                \"acc_yUbWUVMm4V4e4\",\n                \"acc_rkpFCApTGUEnY\",\n                \"acc_Eh7KKppX8gaFi\",\n                \"acc_kAVbepnfMHMj7\",\n                \"acc_zVpc6CxTVgHHR\",\n                \"acc_YY8ArCaCdYry8\",\n                \"acc_fa3WyFnVWG3eG\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-28T18:07:06.121Z\",\n            \"updated_at\": \"2022-04-28T18:08:19.077Z\",\n            \"last_synced_at\": \"2022-04-28T18:08:19.076Z\"\n        },\n        {\n            \"id\": \"cxn_wHYsikD75QiGM\",\n            \"entity_id\": \"ent_pSQCGbnH5QPBg\",\n            \"accounts\": [\n                \"acc_kmYVdB6cNgzAZ\"\n            ],\n            \"source\": \"plaid\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-02-18T07:13:58.869Z\",\n            \"updated_at\": \"2022-02-18T07:14:22.612Z\",\n            \"last_synced_at\": \"2022-02-18T07:14:21.416Z\"\n        },\n        {\n            \"id\": \"cxn_wrVWX8Ym6fHiX\",\n            \"entity_id\": \"ent_pSQCGbnH5QPBg\",\n            \"accounts\": [\n                \"acc_za92pzsUzbwJk\"\n            ],\n            \"source\": \"plaid\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-02-18T07:16:01.842Z\",\n            \"updated_at\": \"2022-02-18T07:16:26.238Z\",\n            \"last_synced_at\": \"2022-02-18T07:16:24.192Z\"\n        },\n        {\n            \"id\": \"cxn_zWwnAgTzQErkL\",\n            \"entity_id\": \"ent_hrE3iYRtR6N8w\",\n            \"accounts\": [\n                \"acc_kx6qytxFTJbrr\",\n                \"acc_YMMyA3EUp4h4t\",\n                \"acc_DcnnL3pmP9rKC\",\n                \"acc_NzYqfCNwXYkUG\",\n                \"acc_Faptaa8XCTVcM\",\n                \"acc_eyVGYRTrFCNEX\",\n                \"acc_LG4RMjTPhXgFW\",\n                \"acc_rWzzMnjQdViRE\",\n                \"acc_8DjdVUKFKxgUj\",\n                \"acc_KcPGqcLrwQdDV\",\n                \"acc_TjnTGmVXLbLbi\",\n                \"acc_bQEYTTYyG9NmT\",\n                \"acc_R6XqWKATiMbbV\",\n                \"acc_zdcQTgGCNtJEf\",\n                \"acc_RwV9nwAdMLC9g\",\n                \"acc_4w4MdwYUKnbcj\",\n                \"acc_3NFBH47MFQEwn\",\n                \"acc_3U36jR8bWCYtY\",\n                \"acc_mzwzpFaf9wKkx\",\n                \"acc_kw4BVYa9fcE8R\",\n                \"acc_ERUWykigK4zj4\",\n                \"acc_ANgWb3DYF9pnC\",\n                \"acc_AFMAVwre77Mrg\",\n                \"acc_G3nzkN4Gkijk4\",\n                \"acc_RCqXbWLpJ4Up4\",\n                \"acc_cWwfWkF7b9Mcz\",\n                \"acc_BLcW6hHbahUye\",\n                \"acc_PAdz98yfaKUQB\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-28T17:15:46.931Z\",\n            \"updated_at\": \"2022-04-28T17:16:17.070Z\",\n            \"last_synced_at\": \"2022-04-28T17:16:17.069Z\"\n        },\n        {\n            \"id\": \"cxn_zfXdnW7YYGDQV\",\n            \"entity_id\": \"ent_jDFWLzATZZ3fe\",\n            \"accounts\": [\n                \"acc_hrzU6JqVSHzgb\",\n                \"acc_aLbsEABiWYRVj\",\n                \"acc_LMb8kxAhAH6Ci\",\n                \"acc_McQ36VJLkA9wa\",\n                \"acc_GKqEcaQEsswL8\",\n                \"acc_dYw8L5z4jXgXg\",\n                \"acc_ngZXHFWVmsWfs\",\n                \"acc_TpAtwVM7EPeqD\",\n                \"acc_P3pDM6HHDdzVt\",\n                \"acc_3CwxmYhqQXUD8\",\n                \"acc_rXzjtaAnthBFL\",\n                \"acc_CcLNpLEsDcYAg\",\n                \"acc_XrHxDr2LFPMw5\",\n                \"acc_qh9fJKqcy3VRf\",\n                \"acc_XyZ6JEiTDpnG8\",\n                \"acc_UgCxE6CtV5MhC\",\n                \"acc_UzhenQTqbMEQL\",\n                \"acc_MemiEf6ZxkE7V\",\n                \"acc_Gyhy9tFSzfZMe\",\n                \"acc_eGjyh6QKQfUeY\",\n                \"acc_cpmW9gLrMG52J\",\n                \"acc_qnxrC8zqfG65j\",\n                \"acc_eqFCeMP2Ksqdw\",\n                \"acc_XMDJeAqHBenmj\",\n                \"acc_LmPXsiwBKritT\",\n                \"acc_sefPyjD7FVkKR\",\n                \"acc_K6JF4D8npWsXr\",\n                \"acc_WVc7S4S7gESjP\"\n            ],\n            \"source\": \"method_data\",\n            \"status\": \"success\",\n            \"error\": null,\n            \"created_at\": \"2022-04-19T16:34:36.599Z\",\n            \"updated_at\": \"2022-04-28T07:04:12.345Z\",\n            \"last_synced_at\": \"2022-04-28T07:04:12.344Z\"\n        }\n    ],\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Connection",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/connections/:connectionId",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"connections",
+								":connectionId"
+							],
+							"variable": [
+								{
+									"key": "connectionId",
+									"value": "{{connection_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/connections/:connectionId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"connections",
+										":connectionId"
+									],
+									"variable": [
+										{
+											"key": "connectionId",
+											"value": "{{connection_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 04 May 2022 18:19:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "70633ee1982d5dbb-IAD"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"351-JnSywAdCUABD4cABMPnT9RRfLnk\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Idem-Request-Id",
+									"value": "adt_JJXtgCjHJ7nnA"
+								},
+								{
+									"key": "Idem-Status",
+									"value": "bypassed"
+								},
+								{
+									"key": "Idem-Version",
+									"value": "dev.22f7868"
+								},
+								{
+									"key": "request-id",
+									"value": "adt_JJXtgCjHJ7nnA"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=R3s10r8GHNK38cfPQ5eUEwqt2HpaZA3MgbUpAgjtB3DdCqKYMEAwBDxlcSBIBENZj1KHCVfkevf552NHrBw37yzaDo3gVR2BVj75WPNkGkSDOqM575wQwE%2BKEFWBcL2fxcI%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"cxn_3PFedecdjwEys\",\n        \"entity_id\": \"ent_Ke2QxrA43GVn6\",\n        \"accounts\": [\n            \"acc_hjHNbUAdehqhK\",\n            \"acc_c3ckPHsATUExW\",\n            \"acc_izgTfdjYw7Hk4\",\n            \"acc_wrmkE6wawFDJB\",\n            \"acc_Y8cpKzpzTqdVM\",\n            \"acc_THJzMh9M8T3MW\",\n            \"acc_LA4HVjETQ7Lai\",\n            \"acc_MYKYHVyNNYtbU\",\n            \"acc_pHsnb2a656aS3\",\n            \"acc_9XJUYNe2QPpkw\",\n            \"acc_CsHCk7XpA3V3a\",\n            \"acc_PDCzNNEkVmpn3\",\n            \"acc_HCNFSQbTxgAFU\",\n            \"acc_3Tsa5PZemrtXG\",\n            \"acc_LkYwTznrE6fmM\",\n            \"acc_pSsJ8UccPMgnj\",\n            \"acc_xcaTWjyj3fDhq\",\n            \"acc_RaX2GYD8XWYQi\",\n            \"acc_sgM462daaULne\",\n            \"acc_2Fjy5kMgnnaQX\",\n            \"acc_47pnyUHcx5mfd\",\n            \"acc_xUpCYwHh54sjF\",\n            \"acc_7qqfzZCgYDmhR\",\n            \"acc_AP32DgCnqr57s\",\n            \"acc_wNsWjSk9xVTAt\",\n            \"acc_3xQwYJnGFpzQd\",\n            \"acc_MErKBCewycmXg\",\n            \"acc_dsP2eqBYTf3XA\"\n        ],\n        \"source\": \"method_data\",\n        \"status\": \"success\",\n        \"error\": null,\n        \"created_at\": \"2022-04-19T00:04:08.731Z\",\n        \"updated_at\": \"2022-04-28T07:04:10.677Z\",\n        \"last_synced_at\": \"2022-04-28T07:04:10.677Z\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/connections/:connectionId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"connections",
+										":connectionId"
+									],
+									"variable": [
+										{
+											"key": "connectionId",
+											"value": "WRONG_ID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 04 May 2022 18:27:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "706349fe4d3805a8-IAD"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11b-mWq9fV9owp94Vw4DBaMl4SoLh08\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Idem-Request-Id",
+									"value": "adt_EQBz6zM3K6YU4"
+								},
+								{
+									"key": "Idem-Status",
+									"value": "bypassed"
+								},
+								{
+									"key": "Idem-Version",
+									"value": "dev.22f7868"
+								},
+								{
+									"key": "request-id",
+									"value": "adt_EQBz6zM3K6YU4"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=n3c%2FcPblf1SOIJcYMufQ%2F1Cnt8ELQvCuHXYK7dd8Pg0%2FlJikSCmg2n7FL7fqYz5uMbZtfzY8jXmuO8nB9D%2FqMGdoxQt3MBBjnAYe7%2BWQR2%2FPD7uDkfLo2ThhR6EzPkrtdzY%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 404,\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Connection",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"syncing\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/connections/:connectionId",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"connections",
+								":connectionId"
+							],
+							"variable": [
+								{
+									"key": "connectionId",
+									"value": "{{connection_id}}"
+								}
+							]
+						},
+						"description": "### Parameters\n\n| Name | Description |\n| --- | --- |\n| status | The status of connection to update. Options: `syncing`, `success`, `failed`, or `reauth_required` |"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"syncing\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/connections/:connectionId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"connections",
+										":connectionId"
+									],
+									"variable": [
+										{
+											"key": "connectionId",
+											"value": "{{connection_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 04 May 2022 18:30:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "70634e640ab58012-IAD"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"351-fXrkKePkSvgEnDYSp/ACHM1biag\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Idem-Request-Id",
+									"value": "adt_LTPUTP3HaJMBr"
+								},
+								{
+									"key": "Idem-Status",
+									"value": "bypassed"
+								},
+								{
+									"key": "Idem-Version",
+									"value": "dev.22f7868"
+								},
+								{
+									"key": "request-id",
+									"value": "adt_LTPUTP3HaJMBr"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=B8Ka28bRVeJ2yMR6%2FmewbgfJfbQRP4IF%2Bga4%2Fmey46Xheo5hSz4eO54IpTEUvutjFaU6NsG4EzOvI3HMDzFnZb7kgSfI1UAZNBhZk%2BPem6o%2Fe9ho2DLbUxeiaXFBDbcuY6Y%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"cxn_3PFedecdjwEys\",\n        \"entity_id\": \"ent_Ke2QxrA43GVn6\",\n        \"accounts\": [\n            \"acc_hjHNbUAdehqhK\",\n            \"acc_c3ckPHsATUExW\",\n            \"acc_izgTfdjYw7Hk4\",\n            \"acc_wrmkE6wawFDJB\",\n            \"acc_Y8cpKzpzTqdVM\",\n            \"acc_THJzMh9M8T3MW\",\n            \"acc_LA4HVjETQ7Lai\",\n            \"acc_MYKYHVyNNYtbU\",\n            \"acc_pHsnb2a656aS3\",\n            \"acc_9XJUYNe2QPpkw\",\n            \"acc_CsHCk7XpA3V3a\",\n            \"acc_PDCzNNEkVmpn3\",\n            \"acc_HCNFSQbTxgAFU\",\n            \"acc_3Tsa5PZemrtXG\",\n            \"acc_LkYwTznrE6fmM\",\n            \"acc_pSsJ8UccPMgnj\",\n            \"acc_xcaTWjyj3fDhq\",\n            \"acc_RaX2GYD8XWYQi\",\n            \"acc_sgM462daaULne\",\n            \"acc_2Fjy5kMgnnaQX\",\n            \"acc_47pnyUHcx5mfd\",\n            \"acc_xUpCYwHh54sjF\",\n            \"acc_7qqfzZCgYDmhR\",\n            \"acc_AP32DgCnqr57s\",\n            \"acc_wNsWjSk9xVTAt\",\n            \"acc_3xQwYJnGFpzQd\",\n            \"acc_MErKBCewycmXg\",\n            \"acc_dsP2eqBYTf3XA\"\n        ],\n        \"source\": \"method_data\",\n        \"status\": \"success\",\n        \"error\": null,\n        \"created_at\": \"2022-04-19T00:04:08.731Z\",\n        \"updated_at\": \"2022-04-28T07:04:10.677Z\",\n        \"last_synced_at\": \"2022-05-04T18:30:13.323Z\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"syncing\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/connections/:connectionId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"connections",
+										":connectionId"
+									],
+									"variable": [
+										{
+											"key": "connectionId",
+											"value": "WRONG_ID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 04 May 2022 18:35:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "706356b7b9f45b0a-IAD"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11b-mWq9fV9owp94Vw4DBaMl4SoLh08\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Idem-Request-Id",
+									"value": "adt_QAJxQaaCrLnpq"
+								},
+								{
+									"key": "Idem-Status",
+									"value": "bypassed"
+								},
+								{
+									"key": "Idem-Version",
+									"value": "dev.22f7868"
+								},
+								{
+									"key": "request-id",
+									"value": "adt_QAJxQaaCrLnpq"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=YQ1K%2F%2BEE%2BiDYqT8iKOswKkZBkMkeHiTr%2BUJT0cCWtCQJRXc5K7I6BXHWiS9uMBtOHStMv7Fq46utqe0RS3Wag5TwApap3zQpOozrbXaHlU6eM5HczA50DafSiZZUehKr6CA%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 404,\n            \"sub_type\": \"NOT_FOUND\",\n            \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n        }\n    },\n    \"message\": \"We were unable to find the requested resource. Verify your request and try again.\"\n}"
+						},
+						{
+							"name": "404 missing required parameter",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/connections/:connectionId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"connections",
+										":connectionId"
+									],
+									"variable": [
+										{
+											"key": "connectionId",
+											"value": "{{connection_id}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 04 May 2022 18:45:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "706364cab8916fcb-IAD"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-LhnAupQR/7e4VLohWzjFTulOK2U\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Idem-Request-Id",
+									"value": "adt_qcVUkqVDpGzPw"
+								},
+								{
+									"key": "Idem-Status",
+									"value": "bypassed"
+								},
+								{
+									"key": "Idem-Version",
+									"value": "dev.22f7868"
+								},
+								{
+									"key": "request-id",
+									"value": "adt_qcVUkqVDpGzPw"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=O4XQRcFntNCqwatx7EG5OVHoyYMPQeMDFj3MKTMAxwAqb8qPB8D8z0wsZmD22JAwWIaDZS881Q37bprz35CIJEDnbIhozK7GJNqe%2BR2vMvp5LPO4nM6Ol%2FD9c6jEZ5lB778%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"INVALID_REQUEST\",\n            \"message\": \"Field \\\"status\\\" is required. Verify your request and try again.\"\n        }\n    },\n    \"message\": \"Field \\\"status\\\" is required. Verify your request and try again.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Elements",
+			"item": [
+				{
+					"name": "Link",
+					"item": [
+						{
+							"name": "Create Element Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entity_id\": \"ent_yqw7BZgtmHgdi\",\n    \"team_name\": \"Demo Payment App\",\n    \"type\": \"link\",\n    \"link\": {\n        \"mask\": \"4127\",\n        \"mch_id\": \"mch_3\"\n    }\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/elements/token",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"elements",
+										"token"
+									]
+								},
+								"description": "### Parameters\n\n| Name | Type | Required | Description |\n| --- | --- | --- | --- |\n| `entity_id` | `string` | true | The id of the end user (`entity`) for which the `element_token` will be created. |\n| `team_name` | `string` | true | The name used to refer to your company/app throughout the link flow. |\n| `type` | `string` | true | The type of element you wish to launch. In this case `link`. |\n| `link` | `object` | true | Link element information |\n| `link.mch_id` | `string` |  | The `mch_id` of a merchant to open directly when Link Element is launched. |\n| `link.mask` | `string` |  | The last 4 digits of the account number the user will be required to link. |"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"entity_id\": \"ent_yqw7BZgtmHgdi\",\n    \"team_name\": \"Demo Payment App\",\n    \"type\": \"link\",\n    \"link\": {\n        \"mask\": \"4127\",\n        \"mch_id\": \"mch_3\"\n    }\n}"
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/elements/token",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"elements",
+												"token"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 04 May 2022 19:00:23 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "70637a9b4eb16faa-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"63-UbKp9/c1bzNjz5W5Ue++wUDk8N8\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_FQiEzVnNxGBeh"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_FQiEzVnNxGBeh"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Vbz73Dw5y0qjpliKsXm0gXI%2Fe4b8rQ8AC9gUN%2BcWJfdk%2B7Kp1bcdMZ9jDCltdS%2B2DTGOU6MWQnr8MEo1selgNkukyXJ50uhAQGdRKuX7%2FqAyjXPl8e%2Bojb1JqRpppKXNjnQ%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"element_token\": \"pk_elem_C4TKn8jaCtkfdhCQed8d7e4zzjPT99V9\"\n    },\n    \"message\": null\n}"
+								},
+								{
+									"name": "404 invalid entity",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"entity_id\": \"ent_yqw7BZgtmHgdii\",\n    \"team_name\": \"Demo Payment App\",\n    \"type\": \"link\",\n    \"link\": {\n        \"mask\": \"4127\",\n        \"mch_id\": \"mch_3\"\n    }\n}"
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/elements/token",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"elements",
+												"token"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 04 May 2022 19:01:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "304"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "70637bc14ace0637-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"130-FnKdotFYkK95LyrsdSEWKylFJpY\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_pLztXCCcXQqtm"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_pLztXCCcXQqtm"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=dK%2BTmmpMD7qH%2F5KmccVFvnu7bd%2FScuhPpA4YE8VYXj0qTT4l5I2ScgEVUHEVP5EA7fWPto8eL4SWNDbA0clS9gghhu%2F86nDtngHt7DpGADWdAmG53SDCGus4F%2Bd2fR9bXL8%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"INVALID_ENTITY\",\n            \"message\": \"The entity provided is not valid. Please verify the entity_id and try your request again.\"\n        }\n    },\n    \"message\": \"The entity provided is not valid. Please verify the entity_id and try your request again.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Exchange Public Account Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"public_account_token\": \"pk_acc_iZKeBTmnmw3aSGePcfdweUEJTBXwsfR4\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/elements/accounts/exchange",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"elements",
+										"accounts",
+										"exchange"
+									]
+								},
+								"description": "### Parameters\n\n| Name | Type | Required | Description |\n| --- | --- | --- | --- |\n| `public_account_token` | `string` | true | The public account token returned by the Link Element after an account has successfully been connected. |"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Simulations",
+			"item": [
+				{
+					"name": "Payments",
+					"item": [
+						{
+							"name": "Update Payment Status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"processing\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/simulate/payments/:paymentId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"simulate",
+										"payments",
+										":paymentId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "{{payment_id}}"
+										}
+									]
+								},
+								"description": "### Parameters\n\n| Name | Type | Required | Description |\n| --- | --- | --- | --- |\n| `status` | `string` | true | The next status to which the payment should transition. See [valid status transitions](https://docs.methodfi.com/api/simulate/payments/update#valid-status-transitions). |\n| `error_code` | `number, nullable` |  | The desired payment error code to simulate. Required when status is `reversal_required` or `reversal_processing`. Possible values: `10001`. |"
+							},
+							"response": [
+								{
+									"name": "404 missing required parameter",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\": \"reversal_required\"\n}"
+										},
+										"url": {
+											"raw": "https://{{env}}.methodfi.com/simulate/payments/:paymentId",
+											"protocol": "https",
+											"host": [
+												"{{env}}",
+												"methodfi",
+												"com"
+											],
+											"path": [
+												"simulate",
+												"payments",
+												":paymentId"
+											],
+											"variable": [
+												{
+													"key": "paymentId",
+													"value": "{{payment_id}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 04 May 2022 19:28:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "263"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "7063a3c28e526fbb-IAD"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"107-s5lPcetU9+TbISgMej8guxgVGew\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Idem-Request-Id",
+											"value": "adt_wGfwYRrdrcw8j"
+										},
+										{
+											"key": "Idem-Status",
+											"value": "bypassed"
+										},
+										{
+											"key": "Idem-Version",
+											"value": "dev.22f7868"
+										},
+										{
+											"key": "request-id",
+											"value": "adt_wGfwYRrdrcw8j"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=jnIgmjC%2FIuJ7ipVaowpYc9Y5T5yuB2rsREqmaoB0z%2FyJc5ut5guPQ7D1%2FgGEgWs2HXLalK38rh6bno%2BlCGN8vs2peLA6T%2FozPA3EqzPVn%2BESZ%2FY1lw9L0HQiiXauQLj%2F6kQ%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"data\": {\n        \"error\": {\n            \"type\": \"INVALID_REQUEST\",\n            \"code\": 400,\n            \"sub_type\": \"INVALID_REQUEST\",\n            \"message\": \"Field \\\"error_code\\\" is required. Verify your request and try again.\"\n        }\n    },\n    \"message\": \"Field \\\"error_code\\\" is required. Verify your request and try again.\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "List Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/transactions",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/transactions?acc_id={{account_id}}",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "acc_id",
+											"value": "{{account_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"txn_2342318674632\",\n            \"acc_id\": \"acc_KMbbfzJdNt4mw\",\n            \"mcc\": \"1234\",\n            \"description\": \"OFFICE 123-456-7890\",\n            \"presentable_description\": \"OFFICE \",\n            \"amount\": \"12.34\",\n            \"currency\": \"USD\",\n            \"billing_amount\": \"12.34\",\n            \"billing_currency\": \"USD\",\n            \"status\": \"cleared\",\n            \"created_at\": \"2022-06-14T15:10:28.213Z\",\n            \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n        }\n    ],\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{env}}.methodfi.com/transactions/:transactionId",
+							"protocol": "https",
+							"host": [
+								"{{env}}",
+								"methodfi",
+								"com"
+							],
+							"path": [
+								"transactions",
+								":transactionId"
+							],
+							"variable": [
+								{
+									"key": "transactionId",
+									"value": "{{transaction_id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/transactions/:transactionId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"transactions",
+										":transactionId"
+									],
+									"variable": [
+										{
+											"key": "transactionId",
+											"value": "{{transaction_id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"txn_2342318674632\",\n        \"acc_id\": \"acc_KMbbfzJdNt4mw\",\n        \"mcc\": \"1234\",\n        \"description\": \"OFFICE 123-456-7890\",\n        \"presentable_description\": \"OFFICE \",\n        \"amount\": \"12.34\",\n        \"currency\": \"USD\",\n        \"billing_amount\": \"12.34\",\n        \"billing_currency\": \"USD\",\n        \"status\": \"cleared\",\n        \"created_at\": \"2022-06-14T15:10:28.213Z\",\n        \"updated_at\": \"2022-06-14T15:10:28.213Z\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "404 id not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{env}}.methodfi.com/transactions/:transactionId",
+									"protocol": "https",
+									"host": [
+										"{{env}}",
+										"methodfi",
+										"com"
+									],
+									"path": [
+										"transactions",
+										":transactionId"
+									],
+									"variable": [
+										{
+											"key": "transactionId",
+											"value": "{{transaction_id}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
 								}
 							],
 							"cookie": [],
